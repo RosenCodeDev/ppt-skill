@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0.0",
+  "plan_id": "plan-example-001",
+  "deck_id": "example-render-contract",
+  "task_instance_id": "task-example-render-001",
+  "created_at": "2026-09-22T00:00:00Z",
+  "publication_intent": "evaluate",
+  "source_deck_spec_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "provider": {
+    "id": "example-evaluation-provider",
+    "interface_version": "1.0.0",
+    "classification": "evaluation_only",
+    "version": "1.0.0"
+  },
+  "template": {
+    "path": "assets/Corporate_Template.pptx",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "manifest_path": "references/template_manifest.json",
+    "manifest_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "requirement_bindings": [
+    {
+      "requirement_id": "CR-001",
+      "slide_id": "S01",
+      "element_ids": ["S01-E01"],
+      "planned_representation": "Visible KPI guardrail: customer satisfaction at or above 4.4/5",
+      "verification_tokens": ["customer satisfaction", "4.4"],
+      "required": true
+    }
+  ],
+  "slides": [
+    {
+      "slide_id": "S01",
+      "source_position": 1,
+      "semantic_intent": "recommendation",
+      "exhibit_strategy": "decision condition strip",
+      "layout": {
+        "template_name": "Title and Content",
+        "semantic_alias": "Title and Content",
+        "provider_eligible": true,
+        "grouped_slot_ids": []
+      },
+      "bindings": [
+        {
+          "element_id": "S01-E01",
+          "placeholder_idx": 1,
+          "semantic_role": "decision_guardrail",
+          "group_id": null,
+          "required": true,
+          "accepted_content_kinds": ["text"]
+        }
+      ],
+      "blocks": [
+        {
+          "element_id": "S01-E01",
+          "strategy": "text",
+          "content_key": "guardrail",
+          "required": true,
+          "payload": "Customer satisfaction at or above 4.4/5"
+        }
+      ],
+      "required_element_ids": ["S01-E01"],
+      "overflow_policy": "reject",
+      "provider_payload": {
+        "intent": "recommendation",
+        "content": {"guardrail": "Customer satisfaction at or above 4.4/5"}
+      }
+    }
+  ]
+}

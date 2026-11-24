@@ -1,0 +1,472 @@
+{
+  "schema_version": "2.0.0",
+  "skill_version": "1.0.0",
+  "deck_id": "example-growth-strategy",
+  "task_instance_id": "task-example-001",
+  "created_at": "2026-07-11T00:00:00Z",
+  "task_scope": {
+    "task_scoped": true,
+    "canonical_assets_mutated": false,
+    "carry_over_to_future_tasks": false
+  },
+  "mode": "create",
+  "capability_tier": "tier_3_programmatic",
+  "template": {
+    "file": "assets/Corporate_Template.pptx",
+    "manifest_file": "references/template_manifest.json",
+    "template_sha256": "adf7c86d2c37cad141a819cac2ac10df5ba236fb3a04c8b65b5d154d2f6bfaed",
+    "manifest_match": "verified",
+    "provisional_fallback_used": false
+  },
+  "brief": {
+    "objective": "Identify the most attractive near-term growth priorities",
+    "audience": "Executive leadership team",
+    "purpose": "Decision",
+    "decision_or_action": "Select the two initiatives to fund",
+    "presentation_mode": "live",
+    "scope": "Illustrative synthetic example",
+    "constraints": [],
+    "source_materials": ["Synthetic example inputs"]
+  },
+  "decision_critical_requirements": [
+    {
+      "requirement_id": "CR-001",
+      "category": "decision",
+      "statement": "Select the two initiatives to fund",
+      "required_in_deck": true,
+      "source_refs": ["Synthetic example inputs"],
+      "target_slide_ids": ["S04"],
+      "target_element_ids": ["S04-E01"],
+      "verification_note": "The recommendation slide must visibly name both funded initiatives"
+    }
+  ],
+  "user_blueprint": {
+    "present": true,
+    "summary": "The user requested a short decision deck with one recommendation slide",
+    "instructions": [
+      {
+        "scope": "deck.length",
+        "instruction": "Keep the example deck concise",
+        "status": "preferred"
+      }
+    ]
+  },
+  "user_overrides": [],
+  "evidence_ledger": [
+    {
+      "evidence_id": "E-001",
+      "claim": "Two regions account for most of the illustrative opportunity",
+      "status": "illustrative_content",
+      "source_refs": [],
+      "validation_needed": "Replace with validated market data",
+      "notes": "Synthetic example only"
+    }
+  ],
+  "governing_thought": {
+    "statement": "Near-term growth should focus on two underpenetrated regions where demand is attractive and execution requirements are manageable.",
+    "supporting_arguments": [
+      "The two regions contain most of the illustrative opportunity",
+      "Existing capabilities can be extended without a full operating-model redesign",
+      "The initiatives have a shorter time to value than broader expansion"
+    ],
+    "counter_evidence": ["Regional demand assumptions require validation"],
+    "alternative_explanations": [],
+    "vulnerable_assumptions": ["Illustrative market-growth rates"],
+    "decision_risks": ["Execution capacity may constrain simultaneous launch"]
+  },
+  "terminology_register": [
+    {
+      "term": "priority regions",
+      "approved_usage": "Use for the two recommended regions",
+      "avoid": ["target markets", "focus geographies"]
+    }
+  ],
+  "slides": [
+    {
+      "slide_id": "S01",
+      "position": 1,
+      "structural_role": "title",
+      "substantive": false,
+      "substantive_reason": "Basic cover used to identify the presentation without advancing the business argument",
+      "modified_in_task": true,
+      "companion_coverage": "full",
+      "purpose": "Introduce the presentation",
+      "layout": {
+        "option_id": "S01-LAYOUT-O1",
+        "template_name": "Title Slide",
+        "semantic_alias": "Title Slide",
+        "custom": false,
+        "rationale": "Use the standard cover layout for presentation identity and hierarchy",
+        "alternatives": [],
+        "alternative_status": "no_meaningful_alternative",
+        "new_layout_created": false,
+        "new_master_created": false
+      },
+      "title": {
+        "format": "T1_T2",
+        "t1": {
+          "selected": {
+            "option_id": "S01-T1-O1",
+            "value": "NEAR-TERM GROWTH PRIORITIES"
+          },
+          "alternatives": [
+            {
+              "option_id": "S01-T1-O2",
+              "value": "GROWTH STRATEGY"
+            }
+          ],
+          "alternative_status": "alternatives_available"
+        },
+        "t2": {
+          "selected": {
+            "option_id": "S01-T2-O1",
+            "value": "Illustrative decision deck"
+          },
+          "alternatives": [],
+          "alternative_status": "no_meaningful_alternative"
+        },
+        "fit_status": "fits"
+      },
+      "elements": [],
+      "sources": [],
+      "instruction_source": "agent",
+      "instruction_status": "open",
+      "confirmed_override_refs": [],
+      "intentionally_unchanged": false,
+      "qa": []
+    },
+    {
+      "slide_id": "S02",
+      "position": 2,
+      "structural_role": "confidentiality",
+      "substantive": false,
+      "substantive_reason": "Fixed legal wording that does not contribute to the business argument",
+      "modified_in_task": false,
+      "companion_coverage": "technical_notice_only",
+      "purpose": "Present fixed confidentiality wording",
+      "layout": {
+        "option_id": "S02-LAYOUT-O1",
+        "template_name": "Confidentiality",
+        "semantic_alias": "Confidentiality",
+        "custom": false,
+        "rationale": "Preserve the protected fixed confidentiality layout",
+        "alternatives": [],
+        "alternative_status": "not_applicable",
+        "new_layout_created": false,
+        "new_master_created": false
+      },
+      "elements": [],
+      "sources": [],
+      "instruction_source": "template",
+      "instruction_status": "locked",
+      "confirmed_override_refs": [],
+      "intentionally_unchanged": true,
+      "qa": []
+    },
+    {
+      "slide_id": "S03",
+      "position": 3,
+      "structural_role": "contents",
+      "substantive": false,
+      "substantive_reason": "Agenda-only navigation that does not add evidence, interpretation, or a recommendation",
+      "modified_in_task": true,
+      "companion_coverage": "full",
+      "purpose": "Show the deck structure",
+      "layout": {
+        "option_id": "S03-LAYOUT-O1",
+        "template_name": "Contents",
+        "semantic_alias": "Contents",
+        "custom": false,
+        "rationale": "Use the standard contents layout for concise navigation",
+        "alternatives": [],
+        "alternative_status": "no_meaningful_alternative",
+        "new_layout_created": false,
+        "new_master_created": false
+      },
+      "title": {
+        "format": "T1_ONLY",
+        "t1": {
+          "selected": {
+            "option_id": "S03-T1-O1",
+            "value": "CONTENTS"
+          },
+          "alternatives": [],
+          "alternative_status": "not_applicable"
+        },
+        "fit_status": "fits"
+      },
+      "elements": [
+        {
+          "element_id": "S03-E01",
+          "element_type": "bullets",
+          "content": {
+            "selected": {
+              "option_id": "S03-E01-O1",
+              "value": ["Executive recommendation", "Supporting rationale", "Next steps"]
+            },
+            "alternatives": [],
+            "alternative_status": "no_meaningful_alternative"
+          },
+          "evidence_status": "not_applicable",
+          "source_refs": [],
+          "editable": true,
+          "native_powerpoint_object": true
+        }
+      ],
+      "sources": [],
+      "instruction_source": "agent",
+      "instruction_status": "open",
+      "confirmed_override_refs": [],
+      "intentionally_unchanged": false,
+      "qa": []
+    },
+    {
+      "slide_id": "S04",
+      "position": 4,
+      "section_id": "SEC-01",
+      "structural_role": "recommendation",
+      "substantive": true,
+      "substantive_reason": "Removing the slide would remove the regional prioritization recommendation and its supporting evidence",
+      "modified_in_task": true,
+      "companion_coverage": "full",
+      "purpose": "Recommend the two priority regions",
+      "layout": {
+        "option_id": "S04-LAYOUT-O1",
+        "template_name": "2 Columns 2/3 Split",
+        "semantic_alias": "2 Columns 2/3 Split",
+        "custom": false,
+        "rationale": "Give the ranked chart priority while preserving space for implications",
+        "alternatives": [
+          {
+            "option_id": "S04-LAYOUT-O2",
+            "template_name": "Title and Content",
+            "semantic_alias": "Title and Content",
+            "custom": false,
+            "rationale": "Simpler structure, but weaker chart and commentary hierarchy"
+          }
+        ],
+        "alternative_status": "alternatives_available",
+        "new_layout_created": false,
+        "new_master_created": false
+      },
+      "title": {
+        "format": "T1_ONLY",
+        "t1": {
+          "selected": {
+            "option_id": "S04-T1-O1",
+            "value": "TWO REGIONS OFFER THE STRONGEST NEAR-TERM GROWTH POTENTIAL",
+            "evidence_status": "illustrative_content"
+          },
+          "alternatives": [
+            {
+              "option_id": "S04-T1-O2",
+              "value": "NEAR-TERM GROWTH SHOULD FOCUS ON TWO UNDERPENETRATED REGIONS",
+              "evidence_status": "illustrative_content"
+            },
+            {
+              "option_id": "S04-T1-O3",
+              "value": "TWO PRIORITY REGIONS COMBINE ATTRACTIVE DEMAND WITH MANAGEABLE EXECUTION",
+              "evidence_status": "illustrative_content"
+            }
+          ],
+          "alternative_status": "alternatives_available"
+        },
+        "fit_status": "fits"
+      },
+      "elements": [
+        {
+          "element_id": "S04-E01",
+          "element_type": "chart",
+          "content": {
+            "selected": {
+              "option_id": "S04-E01-O1",
+              "value": {
+                "chart_type": "ranked_horizontal_bar",
+                "message": "Regions A and B contain most of the illustrative opportunity",
+                "highlight": ["Region A", "Region B"]
+              },
+              "evidence_status": "illustrative_content"
+            },
+            "alternatives": [
+              {
+                "option_id": "S04-E01-O2",
+                "value": {
+                  "chart_type": "bubble_matrix",
+                  "message": "Compare opportunity with execution feasibility"
+                },
+                "evidence_status": "illustrative_content"
+              }
+            ],
+            "alternative_status": "alternatives_available"
+          },
+          "evidence_status": "illustrative_content",
+          "source_refs": [],
+          "editable": true,
+          "native_powerpoint_object": true,
+          "provisional_label": {
+            "label_text": "ILLUSTRATIVE",
+            "style_id": "OW_PROVISIONAL_LABEL",
+            "applies_to": "S04-E01",
+            "visible_in_pptx": true,
+            "scope_unambiguous": true
+          },
+          "accessibility": {
+            "alt_text": "Illustrative ranked bar chart showing Regions A and B as the largest opportunities.",
+            "decorative": false,
+            "color_only_encoding_avoided": true
+          }
+        },
+        {
+          "element_id": "S04-E02",
+          "element_type": "bullets",
+          "content": {
+            "selected": {
+              "option_id": "S04-E02-O1",
+              "value": [
+                "Both regions show attractive demand and low current penetration",
+                "Existing commercial capabilities can be extended with limited redesign",
+                "A staged launch reduces execution risk"
+              ],
+              "evidence_status": "illustrative_content"
+            },
+            "alternatives": [],
+            "alternative_status": "no_evidence_supported_alternative"
+          },
+          "evidence_status": "illustrative_content",
+          "source_refs": [],
+          "editable": true,
+          "native_powerpoint_object": true
+        }
+      ],
+      "sources": [],
+      "instruction_source": "agent",
+      "instruction_status": "open",
+      "confirmed_override_refs": [],
+      "intentionally_unchanged": false,
+      "qa": [
+        {
+          "check_id": "one_dominant_message",
+          "status": "passed",
+          "details": "Chart and commentary support the same recommendation"
+        }
+      ]
+    },
+    {
+      "slide_id": "S05",
+      "position": 5,
+      "structural_role": "qualification",
+      "substantive": false,
+      "substantive_reason": "Fixed qualification wording that does not contribute new analysis or decision support",
+      "modified_in_task": false,
+      "companion_coverage": "technical_notice_only",
+      "purpose": "Present fixed qualifications wording",
+      "layout": {
+        "option_id": "S05-LAYOUT-O1",
+        "template_name": "Qualification",
+        "semantic_alias": "Qualification",
+        "custom": false,
+        "rationale": "Preserve the protected fixed qualification layout",
+        "alternatives": [],
+        "alternative_status": "not_applicable",
+        "new_layout_created": false,
+        "new_master_created": false
+      },
+      "elements": [],
+      "sources": [],
+      "instruction_source": "template",
+      "instruction_status": "locked",
+      "confirmed_override_refs": [],
+      "intentionally_unchanged": true,
+      "qa": []
+    },
+    {
+      "slide_id": "S06",
+      "position": 6,
+      "structural_role": "backcover",
+      "substantive": false,
+      "substantive_reason": "Fixed closing artwork used for branding rather than business content",
+      "modified_in_task": false,
+      "companion_coverage": "technical_notice_only",
+      "purpose": "Present fixed closing page",
+      "layout": {
+        "option_id": "S06-LAYOUT-O1",
+        "template_name": "Backcover",
+        "semantic_alias": "Backcover",
+        "custom": false,
+        "rationale": "Preserve the protected fixed backcover layout",
+        "alternatives": [],
+        "alternative_status": "not_applicable",
+        "new_layout_created": false,
+        "new_master_created": false
+      },
+      "elements": [],
+      "sources": [],
+      "instruction_source": "template",
+      "instruction_status": "locked",
+      "confirmed_override_refs": [],
+      "intentionally_unchanged": true,
+      "qa": []
+    }
+  ],
+  "qa_summary": {
+    "deterministic_structural": {
+      "status": "completed",
+      "checks": [
+        {
+          "check_id": "macro_free",
+          "status": "passed",
+          "details": "No VBA project present"
+        }
+      ]
+    },
+    "render_dependent_visual": {
+      "status": "completed",
+      "checks": [
+        {
+          "check_id": "all_slides_rendered",
+          "status": "passed",
+          "details": "Synthetic example"
+        }
+      ]
+    },
+    "judgment_based_communication": {
+      "status": "completed",
+      "checks": [
+        {
+          "check_id": "governing_thought_supported",
+          "status": "passed",
+          "details": "Synthetic example"
+        }
+      ]
+    },
+    "final_validation": "passed"
+  },
+  "outputs": {
+    "pptx": {
+      "required": true,
+      "status": "created",
+      "path": "output/example-growth-strategy.pptx",
+      "macro_free": true,
+      "openable_validation": "verified"
+    },
+    "companion_report": {
+      "required": true,
+      "generated_from_deck_spec": true,
+      "markdown_file": {
+        "required": true,
+        "status": "created",
+        "path": "output/example-growth-strategy-companion-options-report.md",
+        "complete": true,
+        "single_file": true
+      },
+      "chat_output": {
+        "required": true,
+        "status": "created",
+        "complete": true,
+        "rendered_in_final_response": true,
+        "content_matches_markdown": true
+      },
+      "parity_status": "verified"
+    }
+  }
+}

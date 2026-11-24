@@ -1,0 +1,274 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.internal/schemas/ow-options-report.schema.json",
+  "title": "PowerPoint Companion Options Report",
+  "description": "Structured source for the complete companion report rendered in chat and as one Markdown file.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "report_id",
+    "deck_id",
+    "task_instance_id",
+    "generated_from_deck_spec",
+    "output_mode",
+    "delivery",
+    "sections",
+    "technical_delivery_notice",
+    "parity"
+  ],
+  "properties": {
+    "schema_version": {"const": "2.0.0"},
+    "report_id": {"type": "string", "minLength": 1},
+    "deck_id": {"type": "string", "minLength": 1},
+    "task_instance_id": {"type": "string", "minLength": 1},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "generated_from_deck_spec": {"const": true},
+    "deck_spec_hash": {"type": "string"},
+    "output_mode": {"const": "single_markdown"},
+    "delivery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["markdown_file", "chat_output"],
+      "properties": {
+        "markdown_file": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["path", "complete", "single_file"],
+          "properties": {
+            "path": {"type": "string", "pattern": "-companion-options-report\\.md$"},
+            "complete": {"const": true},
+            "single_file": {"const": true}
+          }
+        },
+        "chat_output": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["complete", "rendered_in_final_response", "content_matches_markdown"],
+          "properties": {
+            "complete": {"const": true},
+            "rendered_in_final_response": {"const": true},
+            "content_matches_markdown": {"const": true}
+          }
+        }
+      }
+    },
+    "important_notes": {
+      "type": "array",
+      "maxItems": 5,
+      "items": {"type": "string"}
+    },
+    "changes_applied": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["slide_id", "summary"],
+        "properties": {
+          "slide_id": {"type": "string"},
+          "summary": {"type": "string"}
+        }
+      }
+    },
+    "user_directed_decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["scope", "decision", "task_scoped"],
+        "properties": {
+          "scope": {"type": "string"},
+          "decision": {"type": "string"},
+          "default_departure": {"type": "string"},
+          "task_scoped": {"const": true}
+        }
+      }
+    },
+    "sections": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/reportSection"}
+    },
+    "technical_delivery_notice": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "template_used",
+        "fonts_used",
+        "capability_tier",
+        "rendering_status",
+        "qa_completed",
+        "unsupported_objects",
+        "unresolved_evidence_or_data",
+        "unchanged_non_substantive_slides",
+        "platform_limitations"
+      ],
+      "properties": {
+        "template_used": {"type": "string"},
+        "fonts_used": {"type": "array", "items": {"type": "string"}},
+        "fallback_fonts": {"type": "array", "items": {"type": "string"}},
+        "capability_tier": {"type": "string"},
+        "rendering_status": {"enum": ["all_slides_rendered", "partially_rendered", "not_rendered"]},
+        "qa_completed": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["deterministic_structural", "render_dependent_visual", "judgment_based_communication"],
+          "properties": {
+            "deterministic_structural": {"type": "string"},
+            "render_dependent_visual": {"type": "string"},
+            "judgment_based_communication": {"type": "string"}
+          }
+        },
+        "unsupported_objects": {"type": "array", "items": {"type": "string"}},
+        "unresolved_evidence_or_data": {"type": "array", "items": {"type": "string"}},
+        "unchanged_non_substantive_slides": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["slide_id", "classification_reason"],
+            "properties": {
+              "slide_id": {"type": "string"},
+              "classification_reason": {"type": "string", "minLength": 1}
+            }
+          }
+        },
+        "user_directed_deviations": {"type": "array", "items": {"type": "string"}},
+        "platform_limitations": {"type": "array", "items": {"type": "string"}},
+        "macro_free_verified": {"type": "boolean"},
+        "pptx_openable_validation": {"enum": ["verified", "not_verifiable", "failed"]}
+      }
+    },
+    "parity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["option_1_from_deck_spec", "coverage_complete", "status"],
+      "properties": {
+        "option_1_from_deck_spec": {"const": true},
+        "coverage_complete": {"const": true},
+        "status": {"enum": ["verified", "partially_verified", "not_technically_verifiable", "failed"]},
+        "details": {"type": "string"}
+      }
+    }
+  },
+  "$defs": {
+    "contentValue": {
+      "oneOf": [
+        {"type": "string"},
+        {"type": "array", "items": {"type": "string"}},
+        {"type": "object"}
+      ]
+    },
+    "option": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["option_id", "option_number", "value", "used_in_pptx"],
+      "properties": {
+        "option_id": {"type": "string", "minLength": 1},
+        "option_number": {"type": "integer", "minimum": 1, "maximum": 5},
+        "value": {"$ref": "#/$defs/contentValue"},
+        "used_in_pptx": {"type": "boolean"},
+        "rationale": {"type": "string"},
+        "evidence_status": {"type": "string"},
+        "source_refs": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "elementOptions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["element_id", "element_label", "options", "alternative_status"],
+      "properties": {
+        "element_id": {"type": "string"},
+        "element_label": {"type": "string"},
+        "options": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 5,
+          "items": {"$ref": "#/$defs/option"},
+          "contains": {
+            "type": "object",
+            "properties": {
+              "option_number": {"const": 1},
+              "used_in_pptx": {"const": true}
+            },
+            "required": ["option_number", "used_in_pptx"]
+          },
+          "minContains": 1,
+          "maxContains": 1
+        },
+        "alternative_status": {
+          "enum": ["alternatives_available", "no_meaningful_alternative", "no_evidence_supported_alternative", "not_applicable"]
+        },
+        "suggested_only_not_applied": {"type": "boolean"},
+        "qualification": {"type": "string"}
+      }
+    },
+    "titleOptions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["format", "t1", "t2"],
+      "properties": {
+        "format": {"enum": ["T1_ONLY", "T1_T2", "FIXED_TEMPLATE", "NONE"]},
+        "t1": {"oneOf": [{"$ref": "#/$defs/elementOptions"}, {"type": "null"}]},
+        "t2": {"oneOf": [{"$ref": "#/$defs/elementOptions"}, {"type": "null"}]}
+      }
+    },
+    "completeness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["layout_reported", "title_parts_reported", "expected_element_ids", "reported_element_ids", "status"],
+      "properties": {
+        "layout_reported": {"const": true},
+        "title_parts_reported": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"enum": ["T1", "T2"]}
+        },
+        "expected_element_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "reported_element_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "status": {"const": "complete"}
+      }
+    },
+    "slideOptions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "slide_id",
+        "position",
+        "current_title",
+        "substantive",
+        "substantive_reason",
+        "modified_in_task",
+        "companion_coverage",
+        "layout",
+        "title",
+        "elements",
+        "completeness"
+      ],
+      "properties": {
+        "slide_id": {"type": "string"},
+        "position": {"type": "integer", "minimum": 1},
+        "current_title": {"type": "string"},
+        "substantive": {"type": "boolean"},
+        "substantive_reason": {"type": "string", "minLength": 1},
+        "modified_in_task": {"type": "boolean"},
+        "companion_coverage": {"const": "full"},
+        "layout": {"$ref": "#/$defs/elementOptions"},
+        "title": {"$ref": "#/$defs/titleOptions"},
+        "elements": {"type": "array", "items": {"$ref": "#/$defs/elementOptions"}},
+        "completeness": {"$ref": "#/$defs/completeness"},
+        "sources_and_qualifications": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "reportSection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["section_id", "section_title", "slides"],
+      "properties": {
+        "section_id": {"type": "string"},
+        "section_title": {"type": "string"},
+        "slides": {"type": "array", "items": {"$ref": "#/$defs/slideOptions"}}
+      }
+    }
+  }
+}

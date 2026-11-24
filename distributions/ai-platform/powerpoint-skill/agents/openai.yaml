@@ -1,0 +1,13 @@
+interface:
+  display_name: "PowerPoint"
+  short_description: "Build OW decks with complete companion reporting"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/icon.svg"
+  default_prompt: "Use $powerpoint-skill to create or improve this deck and provide all three required deliverables."
+policy:
+  products:
+  - "chatgpt"
+  - "codex"
+  - "api"
+  - "atlas"
+  allow_implicit_invocation: true

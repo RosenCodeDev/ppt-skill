@@ -1,0 +1,2252 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "manifest_version": "1.1.0",
+  "skill_version": "1.0.0",
+  "template": {
+    "file": "CURRENT_OPEN_POWERPOINT_PRESENTATION",
+    "sha256": "7dddb2ff5249d1a3218a96d122bbadb2e530ae6377f049aacbe94226bcd6498f",
+    "source_modified_at_utc": "2026-07-11T23:33:57.440287+00:00",
+    "manifest_generated_at_utc": "2026-07-11T23:34:34.218227+00:00",
+    "slide_width_emu": 12192000,
+    "slide_height_emu": 6858000,
+    "slide_width_in": 13.3333,
+    "slide_height_in": 7.5,
+    "aspect_ratio": "16:9",
+    "expected_master_count": 1,
+    "expected_layout_count": 22,
+    "expected_existing_slide_count": 7,
+    "macro_free_required": true,
+    "master_mutation_allowed_during_deck_tasks": false,
+    "distribution_mode": "not_bundled_in_powerpoint_addin_skill",
+    "usage_instruction": "Open the provided template or a deck based on it before invoking the skill."
+  },
+  "theme": {
+    "heading_font": "Marsh Serif",
+    "body_font": "Noto Sans",
+    "fallback_fonts": {
+      "preferred_heading": "Marsh Serif",
+      "preferred_body": "Noto Sans",
+      "universal": "Calibri"
+    },
+    "colors": {
+      "dark_1": "#000F47",
+      "light_1": "#FFFFFF",
+      "dark_2": "#7B7974",
+      "light_2": "#CEECFF",
+      "accent_1": "#000F47",
+      "accent_2": "#82BAFF",
+      "accent_3": "#CEECFF",
+      "accent_4": "#7B7974",
+      "accent_5": "#B9B6B1",
+      "accent_6": "#EBE7E2",
+      "hyperlink": "#0B4BFF",
+      "followed_hyperlink": "#B9B6B1"
+    },
+    "inherit_theme_before_assigning_literal_styles": true
+  },
+  "custom_layout_grid": {
+    "source": "Derived from recurring placeholder and master geometry in the supplied template",
+    "slide_bounds_in": {
+      "left": 0.0,
+      "top": 0.0,
+      "right": 13.3333,
+      "bottom": 7.5
+    },
+    "primary_content_bounds_in": {
+      "left": 0.5,
+      "top": 1.5413,
+      "right": 12.8333,
+      "bottom": 6.9
+    },
+    "title_zone_in": {
+      "left": 0.5,
+      "top": 0.42,
+      "right": 12.8333,
+      "bottom": 1.2917
+    },
+    "footer_separator_y_in": 7.0,
+    "footer_baseline_y_in": 7.1818,
+    "standard_gutter_in": 0.5,
+    "vertical_anchors_in": [
+      0.0,
+      0.5,
+      3.7083,
+      4.7778,
+      6.9167,
+      9.0556,
+      10.125,
+      12.8333,
+      13.3333
+    ],
+    "horizontal_anchors_in": [
+      0.0,
+      0.42,
+      1.2917,
+      1.5413,
+      2.1067,
+      6.9,
+      7.0,
+      7.5
+    ],
+    "rule": "Use these anchors for custom compositions on Blank; preserve protected master/footer zones and never deliver an empty Blank slide."
+  },
+  "mandatory_default_sequence": {
+    "first": [
+      "Title Slide",
+      "Title Slide with Picture"
+    ],
+    "second": "Confidentiality",
+    "third": "Contents",
+    "penultimate": "Qualification",
+    "last": "Backcover",
+    "section_slides_optional": true,
+    "task_specific_override_allowed_after_informed_confirmation": true
+  },
+  "provisional_label_style": {
+    "style_id": "OW_PROVISIONAL_LABEL",
+    "shape": "rectangle_text_box",
+    "border_width_pt": 2.25,
+    "border_color": "#000F47",
+    "fill_color": "#F7F3EE",
+    "font": "Calibri",
+    "font_size_pt": 14,
+    "font_color": "#000000",
+    "single_line": true,
+    "wrap": false,
+    "fit_width_to_text": true,
+    "effects": "none",
+    "placement_rule": "Place immediately adjacent to the content being qualified; the scope must be visually unambiguous."
+  },
+  "masters": [
+    {
+      "index": 0,
+      "protected": true,
+      "shapes": [
+        {
+          "name": "think-cell data - do not delete",
+          "shape_id": 11,
+          "shape_type": "EMBEDDED_OLE_OBJECT",
+          "is_placeholder": false,
+          "geometry": {
+            "x_emu": 1588,
+            "y_emu": 1588,
+            "width_emu": 1588,
+            "height_emu": 1588,
+            "x_in": 0.0017,
+            "y_in": 0.0017,
+            "width_in": 0.0017,
+            "height_in": 0.0017
+          },
+          "text": "",
+          "protected": true
+        },
+        {
+          "name": "Title",
+          "shape_id": 2,
+          "shape_type": "PLACEHOLDER",
+          "is_placeholder": true,
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 384048,
+            "width_emu": 11277600,
+            "height_emu": 797052,
+            "x_in": 0.5,
+            "y_in": 0.42,
+            "width_in": 12.3333,
+            "height_in": 0.8717
+          },
+          "text": "Click to edit Master title style",
+          "protected": true
+        },
+        {
+          "name": "BodyText",
+          "shape_id": 3,
+          "shape_type": "PLACEHOLDER",
+          "is_placeholder": true,
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 1409700,
+            "width_emu": 11277600,
+            "height_emu": 4899660,
+            "x_in": 0.5,
+            "y_in": 1.5417,
+            "width_in": 12.3333,
+            "height_in": 5.3583
+          },
+          "text": "First level - Body text\nSecond level\nThird level\nFourth level\nFifth level - Heading\nSixth level - Subheading\nSeventh level\nEighth level\nNinth level",
+          "protected": true
+        },
+        {
+          "name": "SlideNumber",
+          "shape_id": 7,
+          "shape_type": "TEXT_BOX",
+          "is_placeholder": false,
+          "geometry": {
+            "x_emu": 11604960,
+            "y_emu": 6567850,
+            "width_emu": 129850,
+            "height_emu": 123110,
+            "x_in": 12.6913,
+            "y_in": 7.1827,
+            "width_in": 0.142,
+            "height_in": 0.1346
+          },
+          "text": "‹#›",
+          "protected": true
+        },
+        {
+          "name": "Date Placeholder",
+          "shape_id": 4,
+          "shape_type": "PLACEHOLDER",
+          "is_placeholder": true,
+          "geometry": {
+            "x_emu": 10968687,
+            "y_emu": 6864350,
+            "width_emu": 522516,
+            "height_emu": 98425,
+            "x_in": 11.9955,
+            "y_in": 7.5069,
+            "width_in": 0.5714,
+            "height_in": 0.1076
+          },
+          "text": "7/11/2026",
+          "protected": true
+        },
+        {
+          "name": "Footer Placeholder",
+          "shape_id": 5,
+          "shape_type": "PLACEHOLDER",
+          "is_placeholder": true,
+          "geometry": {
+            "x_emu": 5757334,
+            "y_emu": 6580188,
+            "width_emu": 677333,
+            "height_emu": 98425,
+            "x_in": 6.2963,
+            "y_in": 7.1962,
+            "width_in": 0.7407,
+            "height_in": 0.1076
+          },
+          "text": "",
+          "protected": true
+        },
+        {
+          "name": "Slide Number Placeholder",
+          "shape_id": 6,
+          "shape_type": "PLACEHOLDER",
+          "is_placeholder": true,
+          "geometry": {
+            "x_emu": 11541276,
+            "y_emu": 6864350,
+            "width_emu": 193524,
+            "height_emu": 98425,
+            "x_in": 12.6217,
+            "y_in": 7.5069,
+            "width_in": 0.2116,
+            "height_in": 0.1076
+          },
+          "text": "‹#›",
+          "protected": true
+        },
+        {
+          "name": "Line",
+          "shape_id": 9,
+          "shape_type": "LINE",
+          "is_placeholder": false,
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 6400800,
+            "width_emu": 11277600,
+            "height_emu": 0,
+            "x_in": 0.5,
+            "y_in": 7.0,
+            "width_in": 12.3333,
+            "height_in": 0.0
+          },
+          "text": "",
+          "protected": true
+        }
+      ]
+    }
+  ],
+  "semantic_model": {
+    "version": "1.0.0",
+    "layout_binding_key": [
+      "part_name",
+      "placeholder_idx",
+      "placeholder_type"
+    ],
+    "unknown_layout_policy": "fail_closed",
+    "layout_parts": {
+      "Title Slide": "/ppt/slideLayouts/slideLayout1.xml",
+      "Title and Content": "/ppt/slideLayouts/slideLayout2.xml",
+      "Title Only": "/ppt/slideLayouts/slideLayout3.xml",
+      "2 Columns": "/ppt/slideLayouts/slideLayout4.xml",
+      "3 Columns": "/ppt/slideLayouts/slideLayout5.xml",
+      "4 Columns": "/ppt/slideLayouts/slideLayout6.xml",
+      "Title and Content with Heading": "/ppt/slideLayouts/slideLayout7.xml",
+      "2 Columns with Heading": "/ppt/slideLayouts/slideLayout8.xml",
+      "2 Columns 2/3 Split": "/ppt/slideLayouts/slideLayout9.xml",
+      "2 Columns 1/3 Split": "/ppt/slideLayouts/slideLayout10.xml",
+      "3 Columns with Heading": "/ppt/slideLayouts/slideLayout11.xml",
+      "4 Columns with Heading": "/ppt/slideLayouts/slideLayout12.xml",
+      "Big Photo Right": "/ppt/slideLayouts/slideLayout13.xml",
+      "CV - Bio with Photo": "/ppt/slideLayouts/slideLayout14.xml",
+      "One Pager Credential": "/ppt/slideLayouts/slideLayout15.xml",
+      "Section": "/ppt/slideLayouts/slideLayout16.xml",
+      "Title Slide with Picture": "/ppt/slideLayouts/slideLayout17.xml",
+      "Contents": "/ppt/slideLayouts/slideLayout18.xml",
+      "Confidentiality": "/ppt/slideLayouts/slideLayout19.xml",
+      "Qualification": "/ppt/slideLayouts/slideLayout20.xml",
+      "Backcover": "/ppt/slideLayouts/slideLayout21.xml",
+      "Blank": "/ppt/slideLayouts/slideLayout22.xml"
+    },
+    "recovered_evaluation_provider": {
+      "automatic_layouts": [
+        "Title Slide",
+        "Title and Content",
+        "Title Only",
+        "2 Columns",
+        "3 Columns",
+        "4 Columns",
+        "2 Columns 2/3 Split",
+        "2 Columns 1/3 Split",
+        "Big Photo Right",
+        "CV - Bio with Photo",
+        "One Pager Credential",
+        "Section",
+        "Title Slide with Picture",
+        "Contents",
+        "Confidentiality",
+        "Qualification",
+        "Backcover",
+        "Blank"
+      ],
+      "disabled_until_group_tests_pass": [
+        "Title and Content with Heading",
+        "2 Columns with Heading",
+        "3 Columns with Heading",
+        "4 Columns with Heading"
+      ]
+    },
+    "grouped_layouts": {
+      "Title and Content with Heading": [
+        {
+          "group_id": "column_1",
+          "heading_placeholder_idx": 10,
+          "body_placeholder_idx": 11
+        }
+      ],
+      "2 Columns with Heading": [
+        {
+          "group_id": "column_1",
+          "heading_placeholder_idx": 10,
+          "body_placeholder_idx": 11
+        },
+        {
+          "group_id": "column_2",
+          "heading_placeholder_idx": 13,
+          "body_placeholder_idx": 12
+        }
+      ],
+      "3 Columns with Heading": [
+        {
+          "group_id": "column_1",
+          "heading_placeholder_idx": 10,
+          "body_placeholder_idx": 11
+        },
+        {
+          "group_id": "column_2",
+          "heading_placeholder_idx": 13,
+          "body_placeholder_idx": 12
+        },
+        {
+          "group_id": "column_3",
+          "heading_placeholder_idx": 15,
+          "body_placeholder_idx": 14
+        }
+      ],
+      "4 Columns with Heading": [
+        {
+          "group_id": "column_1",
+          "heading_placeholder_idx": 10,
+          "body_placeholder_idx": 11
+        },
+        {
+          "group_id": "column_2",
+          "heading_placeholder_idx": 13,
+          "body_placeholder_idx": 12
+        },
+        {
+          "group_id": "column_3",
+          "heading_placeholder_idx": 15,
+          "body_placeholder_idx": 14
+        },
+        {
+          "group_id": "column_4",
+          "heading_placeholder_idx": 17,
+          "body_placeholder_idx": 16
+        }
+      ]
+    },
+    "seed_slides": [
+      {
+        "position": 1,
+        "role": "editable_cover_seed"
+      },
+      {
+        "position": 2,
+        "role": "fixed_confidentiality"
+      },
+      {
+        "position": 3,
+        "role": "discardable_sample"
+      },
+      {
+        "position": 4,
+        "role": "optional_section_seed"
+      },
+      {
+        "position": 5,
+        "role": "discardable_sample"
+      },
+      {
+        "position": 6,
+        "role": "fixed_qualification"
+      },
+      {
+        "position": 7,
+        "role": "fixed_backcover"
+      }
+    ],
+    "protected_parts": [
+      {
+        "path": "ppt/embeddings/oleObject1.bin",
+        "sha256": "614303f2dbbcaf2145e1be4671e3f4f10691daf977767037be0595c3834825c8",
+        "policy": "preserve_byte_exact",
+        "release_effect": "block_if_missing"
+      },
+      {
+        "path": "ppt/embeddings/oleObject2.bin",
+        "sha256": "d195d3b98c29da4e351654a40302d377a68de1d97c3d4f11b03549684e189a62",
+        "policy": "preserve_byte_exact",
+        "release_effect": "block_if_missing"
+      }
+    ]
+  },
+  "layouts": [
+    {
+      "index": 0,
+      "id": "title_slide",
+      "template_name": "Title Slide",
+      "semantic_alias": "Title Slide",
+      "generic_fallback": "cover",
+      "fallback_if_unavailable": "Blank",
+      "fixed_content": false,
+      "protected_layout": true,
+      "blank_must_be_populated": false,
+      "purposes": [
+        "Standard cover without dominant imagery"
+      ],
+      "placeholders": [
+        {
+          "name": "Title",
+          "shape_id": 2,
+          "placeholder_idx": 0,
+          "placeholder_type": "CENTER_TITLE",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 3745704,
+            "width_emu": 7442199,
+            "height_emu": 738664,
+            "x_in": 0.5,
+            "y_in": 4.0964,
+            "width_in": 8.1389,
+            "height_in": 0.8078
+          },
+          "default_text": "Title",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Subtitle",
+          "shape_id": 3,
+          "placeholder_idx": 11,
+          "placeholder_type": "BODY",
+          "geometry": {
+            "x_emu": 457201,
+            "y_emu": 4572000,
+            "width_emu": 7442198,
+            "height_emu": 307777,
+            "x_in": 0.5,
+            "y_in": 5.0,
+            "width_in": 8.1389,
+            "height_in": 0.3366
+          },
+          "default_text": "Subtitle",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Presenter",
+          "shape_id": 4,
+          "placeholder_idx": 13,
+          "placeholder_type": "BODY",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 6185356,
+            "width_emu": 6483350,
+            "height_emu": 215444,
+            "x_in": 0.5,
+            "y_in": 6.7644,
+            "width_in": 7.0903,
+            "height_in": 0.2356
+          },
+          "default_text": "Date, Presenter, Location (optional), etc.",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        }
+      ],
+      "protected_non_placeholder_shapes": []
+    },
+    {
+      "index": 1,
+      "id": "title_and_content",
+      "template_name": "Title and Content",
+      "semantic_alias": "Title and Content",
+      "generic_fallback": "single_content",
+      "fallback_if_unavailable": "Blank",
+      "fixed_content": false,
+      "protected_layout": false,
+      "blank_must_be_populated": false,
+      "purposes": [
+        "Single dominant content block",
+        "Narrative, table, chart, or diagram with a full-width body area"
+      ],
+      "placeholders": [
+        {
+          "name": "Title",
+          "shape_id": 2,
+          "placeholder_idx": 0,
+          "placeholder_type": "TITLE",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 384048,
+            "width_emu": 11277600,
+            "height_emu": 797052,
+            "x_in": 0.5,
+            "y_in": 0.42,
+            "width_in": 12.3333,
+            "height_in": 0.8717
+          },
+          "default_text": "Click to edit Master title style",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Content",
+          "shape_id": 3,
+          "placeholder_idx": 11,
+          "placeholder_type": "OBJECT",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 1409700,
+            "width_emu": 11277600,
+            "height_emu": 4899660,
+            "x_in": 0.5,
+            "y_in": 1.5417,
+            "width_in": 12.3333,
+            "height_in": 5.3583
+          },
+          "default_text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        }
+      ],
+      "protected_non_placeholder_shapes": []
+    },
+    {
+      "index": 2,
+      "id": "title_only",
+      "template_name": "Title Only",
+      "semantic_alias": "Title Only",
+      "generic_fallback": "title_plus_custom_canvas",
+      "fallback_if_unavailable": "Blank",
+      "fixed_content": false,
+      "protected_layout": false,
+      "blank_must_be_populated": false,
+      "purposes": [
+        "Custom exhibit beneath a standard title",
+        "Chart-led or impact composition that does not need body placeholders"
+      ],
+      "placeholders": [
+        {
+          "name": "Title",
+          "shape_id": 2,
+          "placeholder_idx": 0,
+          "placeholder_type": "TITLE",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 384048,
+            "width_emu": 11277600,
+            "height_emu": 797052,
+            "x_in": 0.5,
+            "y_in": 0.42,
+            "width_in": 12.3333,
+            "height_in": 0.8717
+          },
+          "default_text": "Click to edit Master title style",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        }
+      ],
+      "protected_non_placeholder_shapes": []
+    },
+    {
+      "index": 3,
+      "id": "2_columns",
+      "template_name": "2 Columns",
+      "semantic_alias": "2 Columns",
+      "generic_fallback": "two_content_equal",
+      "fallback_if_unavailable": "Blank",
+      "fixed_content": false,
+      "protected_layout": false,
+      "blank_must_be_populated": false,
+      "purposes": [
+        "Two parallel or contrasting content blocks of equal importance"
+      ],
+      "placeholders": [
+        {
+          "name": "Title",
+          "shape_id": 2,
+          "placeholder_idx": 0,
+          "placeholder_type": "TITLE",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 384048,
+            "width_emu": 11277600,
+            "height_emu": 797052,
+            "x_in": 0.5,
+            "y_in": 0.42,
+            "width_in": 12.3333,
+            "height_in": 0.8717
+          },
+          "default_text": "Click to edit Master title style",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Content Left",
+          "shape_id": 3,
+          "placeholder_idx": 11,
+          "placeholder_type": "OBJECT",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 1409700,
+            "width_emu": 5410200,
+            "height_emu": 4902200,
+            "x_in": 0.5,
+            "y_in": 1.5417,
+            "width_in": 5.9167,
+            "height_in": 5.3611
+          },
+          "default_text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Content Right",
+          "shape_id": 4,
+          "placeholder_idx": 12,
+          "placeholder_type": "OBJECT",
+          "geometry": {
+            "x_emu": 6324600,
+            "y_emu": 1409700,
+            "width_emu": 5410200,
+            "height_emu": 4902200,
+            "x_in": 6.9167,
+            "y_in": 1.5417,
+            "width_in": 5.9167,
+            "height_in": 5.3611
+          },
+          "default_text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        }
+      ],
+      "protected_non_placeholder_shapes": []
+    },
+    {
+      "index": 4,
+      "id": "3_columns",
+      "template_name": "3 Columns",
+      "semantic_alias": "3 Columns",
+      "generic_fallback": "three_content_equal",
+      "fallback_if_unavailable": "Blank",
+      "fixed_content": false,
+      "protected_layout": false,
+      "blank_must_be_populated": false,
+      "purposes": [
+        "Three parallel categories, stages, or comparisons"
+      ],
+      "placeholders": [
+        {
+          "name": "Title",
+          "shape_id": 2,
+          "placeholder_idx": 0,
+          "placeholder_type": "TITLE",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 384048,
+            "width_emu": 11277600,
+            "height_emu": 797052,
+            "x_in": 0.5,
+            "y_in": 0.42,
+            "width_in": 12.3333,
+            "height_in": 0.8717
+          },
+          "default_text": "Click to edit Master title style",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Content Left",
+          "shape_id": 4,
+          "placeholder_idx": 11,
+          "placeholder_type": "OBJECT",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 1409700,
+            "width_emu": 3454400,
+            "height_emu": 4902200,
+            "x_in": 0.5,
+            "y_in": 1.5417,
+            "width_in": 3.7778,
+            "height_in": 5.3611
+          },
+          "default_text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Content Middle",
+          "shape_id": 6,
+          "placeholder_idx": 12,
+          "placeholder_type": "OBJECT",
+          "geometry": {
+            "x_emu": 4368799,
+            "y_emu": 1409700,
+            "width_emu": 3454400,
+            "height_emu": 4902200,
+            "x_in": 4.7778,
+            "y_in": 1.5417,
+            "width_in": 3.7778,
+            "height_in": 5.3611
+          },
+          "default_text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Content Right",
+          "shape_id": 8,
+          "placeholder_idx": 14,
+          "placeholder_type": "OBJECT",
+          "geometry": {
+            "x_emu": 8280400,
+            "y_emu": 1409700,
+            "width_emu": 3454400,
+            "height_emu": 4902200,
+            "x_in": 9.0556,
+            "y_in": 1.5417,
+            "width_in": 3.7778,
+            "height_in": 5.3611
+          },
+          "default_text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        }
+      ],
+      "protected_non_placeholder_shapes": []
+    },
+    {
+      "index": 5,
+      "id": "4_columns",
+      "template_name": "4 Columns",
+      "semantic_alias": "4 Columns",
+      "generic_fallback": "four_content_equal",
+      "fallback_if_unavailable": "Blank",
+      "fixed_content": false,
+      "protected_layout": false,
+      "blank_must_be_populated": false,
+      "purposes": [
+        "Four concise parallel categories, stages, or comparisons"
+      ],
+      "placeholders": [
+        {
+          "name": "Title",
+          "shape_id": 2,
+          "placeholder_idx": 0,
+          "placeholder_type": "TITLE",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 384048,
+            "width_emu": 11277600,
+            "height_emu": 797052,
+            "x_in": 0.5,
+            "y_in": 0.42,
+            "width_in": 12.3333,
+            "height_in": 0.8717
+          },
+          "default_text": "Click to edit Master title style",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Content Left",
+          "shape_id": 4,
+          "placeholder_idx": 11,
+          "placeholder_type": "OBJECT",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 1409700,
+            "width_emu": 2476500,
+            "height_emu": 4902200,
+            "x_in": 0.5,
+            "y_in": 1.5417,
+            "width_in": 2.7083,
+            "height_in": 5.3611
+          },
+          "default_text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Content Middle Left",
+          "shape_id": 6,
+          "placeholder_idx": 12,
+          "placeholder_type": "OBJECT",
+          "geometry": {
+            "x_emu": 3390900,
+            "y_emu": 1409700,
+            "width_emu": 2476500,
+            "height_emu": 4902200,
+            "x_in": 3.7083,
+            "y_in": 1.5417,
+            "width_in": 2.7083,
+            "height_in": 5.3611
+          },
+          "default_text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Content Middle Right",
+          "shape_id": 8,
+          "placeholder_idx": 14,
+          "placeholder_type": "OBJECT",
+          "geometry": {
+            "x_emu": 6324600,
+            "y_emu": 1409700,
+            "width_emu": 2476500,
+            "height_emu": 4902200,
+            "x_in": 6.9167,
+            "y_in": 1.5417,
+            "width_in": 2.7083,
+            "height_in": 5.3611
+          },
+          "default_text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Content Right",
+          "shape_id": 10,
+          "placeholder_idx": 16,
+          "placeholder_type": "OBJECT",
+          "geometry": {
+            "x_emu": 9258300,
+            "y_emu": 1409700,
+            "width_emu": 2476500,
+            "height_emu": 4902200,
+            "x_in": 10.125,
+            "y_in": 1.5417,
+            "width_in": 2.7083,
+            "height_in": 5.3611
+          },
+          "default_text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        }
+      ],
+      "protected_non_placeholder_shapes": []
+    },
+    {
+      "index": 6,
+      "id": "title_and_content_with_heading",
+      "template_name": "Title and Content with Heading",
+      "semantic_alias": "Title and Content with Heading",
+      "generic_fallback": "single_content_with_heading",
+      "fallback_if_unavailable": "Blank",
+      "fixed_content": false,
+      "protected_layout": false,
+      "blank_must_be_populated": false,
+      "purposes": [
+        "One content block requiring a local heading or subheading"
+      ],
+      "placeholders": [
+        {
+          "name": "Title",
+          "shape_id": 2,
+          "placeholder_idx": 0,
+          "placeholder_type": "TITLE",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 384048,
+            "width_emu": 11277600,
+            "height_emu": 797052,
+            "x_in": 0.5,
+            "y_in": 0.42,
+            "width_in": 12.3333,
+            "height_in": 0.8717
+          },
+          "default_text": "Click to edit Master title style",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Heading",
+          "shape_id": 3,
+          "placeholder_idx": 10,
+          "placeholder_type": "BODY",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 1409700,
+            "width_emu": 11277600,
+            "height_emu": 407804,
+            "x_in": 0.5,
+            "y_in": 1.5417,
+            "width_in": 12.3333,
+            "height_in": 0.446
+          },
+          "default_text": "Heading\nSubheading",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Content",
+          "shape_id": 4,
+          "placeholder_idx": 11,
+          "placeholder_type": "OBJECT",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 1926696,
+            "width_emu": 11277600,
+            "height_emu": 4382664,
+            "x_in": 0.5,
+            "y_in": 2.1071,
+            "width_in": 12.3333,
+            "height_in": 4.7929
+          },
+          "default_text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        }
+      ],
+      "protected_non_placeholder_shapes": []
+    },
+    {
+      "index": 7,
+      "id": "2_columns_with_heading",
+      "template_name": "2 Columns with Heading",
+      "semantic_alias": "2 Columns with Heading",
+      "generic_fallback": "two_content_equal_with_headings",
+      "fallback_if_unavailable": "Blank",
+      "fixed_content": false,
+      "protected_layout": false,
+      "blank_must_be_populated": false,
+      "purposes": [
+        "Two parallel content blocks, each requiring a local heading"
+      ],
+      "placeholders": [
+        {
+          "name": "Title",
+          "shape_id": 2,
+          "placeholder_idx": 0,
+          "placeholder_type": "TITLE",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 384048,
+            "width_emu": 11277600,
+            "height_emu": 797052,
+            "x_in": 0.5,
+            "y_in": 0.42,
+            "width_in": 12.3333,
+            "height_in": 0.8717
+          },
+          "default_text": "Click to edit Master title style",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Heading Left",
+          "shape_id": 3,
+          "placeholder_idx": 10,
+          "placeholder_type": "BODY",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 1409700,
+            "width_emu": 5410200,
+            "height_emu": 407804,
+            "x_in": 0.5,
+            "y_in": 1.5417,
+            "width_in": 5.9167,
+            "height_in": 0.446
+          },
+          "default_text": "Heading\nSubheading",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Content Left",
+          "shape_id": 4,
+          "placeholder_idx": 11,
+          "placeholder_type": "OBJECT",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 1926696,
+            "width_emu": 5410200,
+            "height_emu": 4382664,
+            "x_in": 0.5,
+            "y_in": 2.1071,
+            "width_in": 5.9167,
+            "height_in": 4.7929
+          },
+          "default_text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Heading Right",
+          "shape_id": 5,
+          "placeholder_idx": 13,
+          "placeholder_type": "BODY",
+          "geometry": {
+            "x_emu": 6324600,
+            "y_emu": 1409700,
+            "width_emu": 5410200,
+            "height_emu": 407804,
+            "x_in": 6.9167,
+            "y_in": 1.5417,
+            "width_in": 5.9167,
+            "height_in": 0.446
+          },
+          "default_text": "Heading\nSubheading",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Content Right",
+          "shape_id": 6,
+          "placeholder_idx": 12,
+          "placeholder_type": "OBJECT",
+          "geometry": {
+            "x_emu": 6324600,
+            "y_emu": 1926696,
+            "width_emu": 5410200,
+            "height_emu": 4382664,
+            "x_in": 6.9167,
+            "y_in": 2.1071,
+            "width_in": 5.9167,
+            "height_in": 4.7929
+          },
+          "default_text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        }
+      ],
+      "protected_non_placeholder_shapes": []
+    },
+    {
+      "index": 8,
+      "id": "2_columns_2_3_split",
+      "template_name": "2 Columns 2/3 Split",
+      "semantic_alias": "2 Columns 2/3 Split",
+      "generic_fallback": "two_content_left_dominant",
+      "fallback_if_unavailable": "Blank",
+      "fixed_content": false,
+      "protected_layout": false,
+      "blank_must_be_populated": false,
+      "purposes": [
+        "Dominant left exhibit or narrative with supporting right commentary"
+      ],
+      "placeholders": [
+        {
+          "name": "Title",
+          "shape_id": 2,
+          "placeholder_idx": 0,
+          "placeholder_type": "TITLE",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 384048,
+            "width_emu": 11277600,
+            "height_emu": 797052,
+            "x_in": 0.5,
+            "y_in": 0.42,
+            "width_in": 12.3333,
+            "height_in": 0.8717
+          },
+          "default_text": "Click to edit Master title style",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Heading Left",
+          "shape_id": 3,
+          "placeholder_idx": 10,
+          "placeholder_type": "BODY",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 1409700,
+            "width_emu": 7366000,
+            "height_emu": 407804,
+            "x_in": 0.5,
+            "y_in": 1.5417,
+            "width_in": 8.0556,
+            "height_in": 0.446
+          },
+          "default_text": "Heading\nSubheading",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Content Left",
+          "shape_id": 4,
+          "placeholder_idx": 11,
+          "placeholder_type": "OBJECT",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 1926696,
+            "width_emu": 7366000,
+            "height_emu": 4385204,
+            "x_in": 0.5,
+            "y_in": 2.1071,
+            "width_in": 8.0556,
+            "height_in": 4.7957
+          },
+          "default_text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Heading Right",
+          "shape_id": 5,
+          "placeholder_idx": 13,
+          "placeholder_type": "BODY",
+          "geometry": {
+            "x_emu": 8280400,
+            "y_emu": 1409700,
+            "width_emu": 3454400,
+            "height_emu": 407804,
+            "x_in": 9.0556,
+            "y_in": 1.5417,
+            "width_in": 3.7778,
+            "height_in": 0.446
+          },
+          "default_text": "Heading\nSubheading",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Content Right",
+          "shape_id": 6,
+          "placeholder_idx": 12,
+          "placeholder_type": "OBJECT",
+          "geometry": {
+            "x_emu": 8280400,
+            "y_emu": 1926696,
+            "width_emu": 3454400,
+            "height_emu": 4385204,
+            "x_in": 9.0556,
+            "y_in": 2.1071,
+            "width_in": 3.7778,
+            "height_in": 4.7957
+          },
+          "default_text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        }
+      ],
+      "protected_non_placeholder_shapes": []
+    },
+    {
+      "index": 9,
+      "id": "2_columns_1_3_split",
+      "template_name": "2 Columns 1/3 Split",
+      "semantic_alias": "2 Columns 1/3 Split",
+      "generic_fallback": "two_content_right_dominant",
+      "fallback_if_unavailable": "Blank",
+      "fixed_content": false,
+      "protected_layout": false,
+      "blank_must_be_populated": false,
+      "purposes": [
+        "Supporting left context with dominant right exhibit or narrative"
+      ],
+      "placeholders": [
+        {
+          "name": "Title",
+          "shape_id": 2,
+          "placeholder_idx": 0,
+          "placeholder_type": "TITLE",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 384048,
+            "width_emu": 11277600,
+            "height_emu": 797052,
+            "x_in": 0.5,
+            "y_in": 0.42,
+            "width_in": 12.3333,
+            "height_in": 0.8717
+          },
+          "default_text": "Click to edit Master title style",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Heading Left",
+          "shape_id": 3,
+          "placeholder_idx": 10,
+          "placeholder_type": "BODY",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 1409700,
+            "width_emu": 3454400,
+            "height_emu": 407804,
+            "x_in": 0.5,
+            "y_in": 1.5417,
+            "width_in": 3.7778,
+            "height_in": 0.446
+          },
+          "default_text": "Heading\nSubheading",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Content Left",
+          "shape_id": 4,
+          "placeholder_idx": 11,
+          "placeholder_type": "OBJECT",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 1926696,
+            "width_emu": 3454400,
+            "height_emu": 4385204,
+            "x_in": 0.5,
+            "y_in": 2.1071,
+            "width_in": 3.7778,
+            "height_in": 4.7957
+          },
+          "default_text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Heading Right",
+          "shape_id": 5,
+          "placeholder_idx": 13,
+          "placeholder_type": "BODY",
+          "geometry": {
+            "x_emu": 4368800,
+            "y_emu": 1409700,
+            "width_emu": 7366000,
+            "height_emu": 407804,
+            "x_in": 4.7778,
+            "y_in": 1.5417,
+            "width_in": 8.0556,
+            "height_in": 0.446
+          },
+          "default_text": "Heading\nSubheading",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Content Right",
+          "shape_id": 6,
+          "placeholder_idx": 12,
+          "placeholder_type": "OBJECT",
+          "geometry": {
+            "x_emu": 4368800,
+            "y_emu": 1926696,
+            "width_emu": 7366000,
+            "height_emu": 4385204,
+            "x_in": 4.7778,
+            "y_in": 2.1071,
+            "width_in": 8.0556,
+            "height_in": 4.7957
+          },
+          "default_text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        }
+      ],
+      "protected_non_placeholder_shapes": []
+    },
+    {
+      "index": 10,
+      "id": "3_columns_with_heading",
+      "template_name": "3 Columns with Heading",
+      "semantic_alias": "3 Columns with Heading",
+      "generic_fallback": "three_content_equal_with_headings",
+      "fallback_if_unavailable": "Blank",
+      "fixed_content": false,
+      "protected_layout": false,
+      "blank_must_be_populated": false,
+      "purposes": [
+        "Three parallel content blocks with local headings"
+      ],
+      "placeholders": [
+        {
+          "name": "Title",
+          "shape_id": 2,
+          "placeholder_idx": 0,
+          "placeholder_type": "TITLE",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 384048,
+            "width_emu": 11277600,
+            "height_emu": 797052,
+            "x_in": 0.5,
+            "y_in": 0.42,
+            "width_in": 12.3333,
+            "height_in": 0.8717
+          },
+          "default_text": "Click to edit Master title style",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Heading Left",
+          "shape_id": 3,
+          "placeholder_idx": 10,
+          "placeholder_type": "BODY",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 1409700,
+            "width_emu": 3454400,
+            "height_emu": 407804,
+            "x_in": 0.5,
+            "y_in": 1.5417,
+            "width_in": 3.7778,
+            "height_in": 0.446
+          },
+          "default_text": "Heading\nSubheading",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Content Left",
+          "shape_id": 4,
+          "placeholder_idx": 11,
+          "placeholder_type": "OBJECT",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 1926696,
+            "width_emu": 3454400,
+            "height_emu": 4382664,
+            "x_in": 0.5,
+            "y_in": 2.1071,
+            "width_in": 3.7778,
+            "height_in": 4.7929
+          },
+          "default_text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Heading Middle",
+          "shape_id": 5,
+          "placeholder_idx": 13,
+          "placeholder_type": "BODY",
+          "geometry": {
+            "x_emu": 4368800,
+            "y_emu": 1409700,
+            "width_emu": 3454400,
+            "height_emu": 407804,
+            "x_in": 4.7778,
+            "y_in": 1.5417,
+            "width_in": 3.7778,
+            "height_in": 0.446
+          },
+          "default_text": "Heading\nSubheading",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Content Middle",
+          "shape_id": 6,
+          "placeholder_idx": 12,
+          "placeholder_type": "OBJECT",
+          "geometry": {
+            "x_emu": 4368800,
+            "y_emu": 1926696,
+            "width_emu": 3454400,
+            "height_emu": 4382664,
+            "x_in": 4.7778,
+            "y_in": 2.1071,
+            "width_in": 3.7778,
+            "height_in": 4.7929
+          },
+          "default_text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Heading Right",
+          "shape_id": 7,
+          "placeholder_idx": 15,
+          "placeholder_type": "BODY",
+          "geometry": {
+            "x_emu": 8280400,
+            "y_emu": 1409700,
+            "width_emu": 3454400,
+            "height_emu": 407804,
+            "x_in": 9.0556,
+            "y_in": 1.5417,
+            "width_in": 3.7778,
+            "height_in": 0.446
+          },
+          "default_text": "Heading\nSubheading",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Content Right",
+          "shape_id": 8,
+          "placeholder_idx": 14,
+          "placeholder_type": "OBJECT",
+          "geometry": {
+            "x_emu": 8280400,
+            "y_emu": 1926696,
+            "width_emu": 3454400,
+            "height_emu": 4382664,
+            "x_in": 9.0556,
+            "y_in": 2.1071,
+            "width_in": 3.7778,
+            "height_in": 4.7929
+          },
+          "default_text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        }
+      ],
+      "protected_non_placeholder_shapes": []
+    },
+    {
+      "index": 11,
+      "id": "4_columns_with_heading",
+      "template_name": "4 Columns with Heading",
+      "semantic_alias": "4 Columns with Heading",
+      "generic_fallback": "four_content_equal_with_headings",
+      "fallback_if_unavailable": "Blank",
+      "fixed_content": false,
+      "protected_layout": false,
+      "blank_must_be_populated": false,
+      "purposes": [
+        "Four concise parallel content blocks with local headings"
+      ],
+      "placeholders": [
+        {
+          "name": "Title",
+          "shape_id": 2,
+          "placeholder_idx": 0,
+          "placeholder_type": "TITLE",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 384048,
+            "width_emu": 11277600,
+            "height_emu": 797052,
+            "x_in": 0.5,
+            "y_in": 0.42,
+            "width_in": 12.3333,
+            "height_in": 0.8717
+          },
+          "default_text": "Click to edit Master title style",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Heading Left",
+          "shape_id": 3,
+          "placeholder_idx": 10,
+          "placeholder_type": "BODY",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 1409700,
+            "width_emu": 2476500,
+            "height_emu": 407804,
+            "x_in": 0.5,
+            "y_in": 1.5417,
+            "width_in": 2.7083,
+            "height_in": 0.446
+          },
+          "default_text": "Heading\nSubheading",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Content Left",
+          "shape_id": 4,
+          "placeholder_idx": 11,
+          "placeholder_type": "OBJECT",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 1926696,
+            "width_emu": 2476500,
+            "height_emu": 4382664,
+            "x_in": 0.5,
+            "y_in": 2.1071,
+            "width_in": 2.7083,
+            "height_in": 4.7929
+          },
+          "default_text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Heading Middle Left",
+          "shape_id": 5,
+          "placeholder_idx": 13,
+          "placeholder_type": "BODY",
+          "geometry": {
+            "x_emu": 3390900,
+            "y_emu": 1409700,
+            "width_emu": 2476500,
+            "height_emu": 407804,
+            "x_in": 3.7083,
+            "y_in": 1.5417,
+            "width_in": 2.7083,
+            "height_in": 0.446
+          },
+          "default_text": "Heading\nSubheading",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Content Middle Left",
+          "shape_id": 6,
+          "placeholder_idx": 12,
+          "placeholder_type": "OBJECT",
+          "geometry": {
+            "x_emu": 3390900,
+            "y_emu": 1926696,
+            "width_emu": 2476500,
+            "height_emu": 4382664,
+            "x_in": 3.7083,
+            "y_in": 2.1071,
+            "width_in": 2.7083,
+            "height_in": 4.7929
+          },
+          "default_text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Heading Middle Right",
+          "shape_id": 7,
+          "placeholder_idx": 15,
+          "placeholder_type": "BODY",
+          "geometry": {
+            "x_emu": 6324600,
+            "y_emu": 1409700,
+            "width_emu": 2476500,
+            "height_emu": 407804,
+            "x_in": 6.9167,
+            "y_in": 1.5417,
+            "width_in": 2.7083,
+            "height_in": 0.446
+          },
+          "default_text": "Heading\nSubheading",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Content Middle Right",
+          "shape_id": 8,
+          "placeholder_idx": 14,
+          "placeholder_type": "OBJECT",
+          "geometry": {
+            "x_emu": 6324600,
+            "y_emu": 1926696,
+            "width_emu": 2476500,
+            "height_emu": 4382664,
+            "x_in": 6.9167,
+            "y_in": 2.1071,
+            "width_in": 2.7083,
+            "height_in": 4.7929
+          },
+          "default_text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Heading Right",
+          "shape_id": 9,
+          "placeholder_idx": 17,
+          "placeholder_type": "BODY",
+          "geometry": {
+            "x_emu": 9258300,
+            "y_emu": 1409700,
+            "width_emu": 2476500,
+            "height_emu": 407804,
+            "x_in": 10.125,
+            "y_in": 1.5417,
+            "width_in": 2.7083,
+            "height_in": 0.446
+          },
+          "default_text": "Heading\nSubheading",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Content Right",
+          "shape_id": 10,
+          "placeholder_idx": 16,
+          "placeholder_type": "OBJECT",
+          "geometry": {
+            "x_emu": 9258300,
+            "y_emu": 1926696,
+            "width_emu": 2476500,
+            "height_emu": 4382664,
+            "x_in": 10.125,
+            "y_in": 2.1071,
+            "width_in": 2.7083,
+            "height_in": 4.7929
+          },
+          "default_text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        }
+      ],
+      "protected_non_placeholder_shapes": []
+    },
+    {
+      "index": 12,
+      "id": "big_photo_right",
+      "template_name": "Big Photo Right",
+      "semantic_alias": "Big Photo Right",
+      "generic_fallback": "text_left_image_right",
+      "fallback_if_unavailable": "Blank",
+      "fixed_content": false,
+      "protected_layout": false,
+      "blank_must_be_populated": false,
+      "purposes": [
+        "Image-led story with explanatory content on the left"
+      ],
+      "placeholders": [
+        {
+          "name": "Title",
+          "shape_id": 2,
+          "placeholder_idx": 0,
+          "placeholder_type": "TITLE",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 384048,
+            "width_emu": 7365998,
+            "height_emu": 797052,
+            "x_in": 0.5,
+            "y_in": 0.42,
+            "width_in": 8.0556,
+            "height_in": 0.8717
+          },
+          "default_text": "Click to edit Master title style",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Content",
+          "shape_id": 3,
+          "placeholder_idx": 11,
+          "placeholder_type": "BODY",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 1409700,
+            "width_emu": 7366000,
+            "height_emu": 4902200,
+            "x_in": 0.5,
+            "y_in": 1.5417,
+            "width_in": 8.0556,
+            "height_in": 5.3611
+          },
+          "default_text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Picture",
+          "shape_id": 4,
+          "placeholder_idx": 12,
+          "placeholder_type": "PICTURE",
+          "geometry": {
+            "x_emu": 8280400,
+            "y_emu": 0,
+            "width_emu": 3911600,
+            "height_emu": 6858000,
+            "x_in": 9.0556,
+            "y_in": 0.0,
+            "width_in": 4.2778,
+            "height_in": 7.5
+          },
+          "default_text": "Click icon to add picture",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        }
+      ],
+      "protected_non_placeholder_shapes": []
+    },
+    {
+      "index": 13,
+      "id": "cv__bio_with_photo",
+      "template_name": "CV - Bio with Photo",
+      "semantic_alias": "CV - Bio with Photo",
+      "generic_fallback": "bio_with_photo",
+      "fallback_if_unavailable": "Blank",
+      "fixed_content": false,
+      "protected_layout": false,
+      "blank_must_be_populated": false,
+      "purposes": [
+        "Consultant or expert biography"
+      ],
+      "placeholders": [
+        {
+          "name": "Title",
+          "shape_id": 2,
+          "placeholder_idx": 0,
+          "placeholder_type": "TITLE",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 3241999,
+            "width_emu": 2647950,
+            "height_emu": 734155,
+            "x_in": 0.5,
+            "y_in": 3.5455,
+            "width_in": 2.8958,
+            "height_in": 0.8029
+          },
+          "default_text": "Name\u000bLast name",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Role",
+          "shape_id": 5,
+          "placeholder_idx": 10,
+          "placeholder_type": "BODY",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 4101621,
+            "width_emu": 2647950,
+            "height_emu": 429768,
+            "x_in": 0.5,
+            "y_in": 4.4856,
+            "width_in": 2.8958,
+            "height_in": 0.47
+          },
+          "default_text": "Role, Position\u000bLocation",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Headshot",
+          "shape_id": 7,
+          "placeholder_idx": 20,
+          "placeholder_type": "PICTURE",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 381000,
+            "width_emu": 2647950,
+            "height_emu": 2647950,
+            "x_in": 0.5,
+            "y_in": 0.4167,
+            "width_in": 2.8958,
+            "height_in": 2.8958
+          },
+          "default_text": "Click icon to add picture",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Content",
+          "shape_id": 3,
+          "placeholder_idx": 11,
+          "placeholder_type": "OBJECT",
+          "geometry": {
+            "x_emu": 3562350,
+            "y_emu": 381000,
+            "width_emu": 8172450,
+            "height_emu": 5928360,
+            "x_in": 3.8958,
+            "y_in": 0.4167,
+            "width_in": 8.9375,
+            "height_in": 6.4833
+          },
+          "default_text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level\nFifth level",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        }
+      ],
+      "protected_non_placeholder_shapes": []
+    },
+    {
+      "index": 14,
+      "id": "one_pager_credential",
+      "template_name": "One Pager Credential",
+      "semantic_alias": "One Pager Credential",
+      "generic_fallback": "credential_three_part",
+      "fallback_if_unavailable": "Blank",
+      "fixed_content": false,
+      "protected_layout": false,
+      "blank_must_be_populated": false,
+      "purposes": [
+        "Credential page covering situation, approach, and impact"
+      ],
+      "placeholders": [
+        {
+          "name": "Title",
+          "shape_id": 2,
+          "placeholder_idx": 0,
+          "placeholder_type": "TITLE",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 384048,
+            "width_emu": 11277600,
+            "height_emu": 797052,
+            "x_in": 0.5,
+            "y_in": 0.42,
+            "width_in": 12.3333,
+            "height_in": 0.8717
+          },
+          "default_text": "Click to edit Master title style",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Impact",
+          "shape_id": 10,
+          "placeholder_idx": 16,
+          "placeholder_type": "BODY",
+          "geometry": {
+            "x_emu": 0,
+            "y_emu": 1407583,
+            "width_emu": 12192000,
+            "height_emu": 797983,
+            "x_in": 0.0,
+            "y_in": 1.5394,
+            "width_in": 13.3333,
+            "height_in": 0.8727
+          },
+          "default_text": "Insert impact statements here (max 2 lines)",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Heading Left",
+          "shape_id": 3,
+          "placeholder_idx": 10,
+          "placeholder_type": "OBJECT",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 2438400,
+            "width_emu": 3454400,
+            "height_emu": 184666,
+            "x_in": 0.5,
+            "y_in": 2.6667,
+            "width_in": 3.7778,
+            "height_in": 0.202
+          },
+          "default_text": "Heading – Client situation",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Content Left",
+          "shape_id": 4,
+          "placeholder_idx": 11,
+          "placeholder_type": "OBJECT",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 2732794,
+            "width_emu": 3454400,
+            "height_emu": 3579106,
+            "x_in": 0.5,
+            "y_in": 2.9886,
+            "width_in": 3.7778,
+            "height_in": 3.9142
+          },
+          "default_text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Heading Middle",
+          "shape_id": 5,
+          "placeholder_idx": 13,
+          "placeholder_type": "OBJECT",
+          "geometry": {
+            "x_emu": 4368800,
+            "y_emu": 2438400,
+            "width_emu": 3454400,
+            "height_emu": 184666,
+            "x_in": 4.7778,
+            "y_in": 2.6667,
+            "width_in": 3.7778,
+            "height_in": 0.202
+          },
+          "default_text": "Heading – Our approach",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Content Middle",
+          "shape_id": 6,
+          "placeholder_idx": 12,
+          "placeholder_type": "OBJECT",
+          "geometry": {
+            "x_emu": 4368800,
+            "y_emu": 2732794,
+            "width_emu": 3454400,
+            "height_emu": 3579106,
+            "x_in": 4.7778,
+            "y_in": 2.9886,
+            "width_in": 3.7778,
+            "height_in": 3.9142
+          },
+          "default_text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Heading Right",
+          "shape_id": 7,
+          "placeholder_idx": 15,
+          "placeholder_type": "OBJECT",
+          "geometry": {
+            "x_emu": 8280400,
+            "y_emu": 2438400,
+            "width_emu": 3454400,
+            "height_emu": 184666,
+            "x_in": 9.0556,
+            "y_in": 2.6667,
+            "width_in": 3.7778,
+            "height_in": 0.202
+          },
+          "default_text": "Heading – Impact achieved",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Content Right",
+          "shape_id": 8,
+          "placeholder_idx": 14,
+          "placeholder_type": "OBJECT",
+          "geometry": {
+            "x_emu": 8280400,
+            "y_emu": 2732794,
+            "width_emu": 3454400,
+            "height_emu": 3579106,
+            "x_in": 9.0556,
+            "y_in": 2.9886,
+            "width_in": 3.7778,
+            "height_in": 3.9142
+          },
+          "default_text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        }
+      ],
+      "protected_non_placeholder_shapes": []
+    },
+    {
+      "index": 15,
+      "id": "section",
+      "template_name": "Section",
+      "semantic_alias": "Section",
+      "generic_fallback": "section_divider",
+      "fallback_if_unavailable": "Blank",
+      "fixed_content": false,
+      "protected_layout": false,
+      "blank_must_be_populated": false,
+      "purposes": [
+        "Major section transition"
+      ],
+      "placeholders": [
+        {
+          "name": "SectionTitle",
+          "shape_id": 2,
+          "placeholder_idx": 11,
+          "placeholder_type": "BODY",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 381000,
+            "width_emu": 7442200,
+            "height_emu": 1261884,
+            "x_in": 0.5,
+            "y_in": 0.4167,
+            "width_in": 8.1389,
+            "height_in": 1.38
+          },
+          "default_text": "Click to add section title\nClick to add section subtitle",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "SectionNumber",
+          "shape_id": 3,
+          "placeholder_idx": 12,
+          "placeholder_type": "BODY",
+          "geometry": {
+            "x_emu": 6070341,
+            "y_emu": 3903345,
+            "width_emu": 5664459,
+            "height_emu": 2954655,
+            "x_in": 6.6386,
+            "y_in": 4.2687,
+            "width_in": 6.1947,
+            "height_in": 3.2313
+          },
+          "default_text": "##",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        }
+      ],
+      "protected_non_placeholder_shapes": []
+    },
+    {
+      "index": 16,
+      "id": "title_slide_with_picture",
+      "template_name": "Title Slide with Picture",
+      "semantic_alias": "Title Slide with Picture",
+      "generic_fallback": "cover_with_picture",
+      "fallback_if_unavailable": "Blank",
+      "fixed_content": false,
+      "protected_layout": true,
+      "blank_must_be_populated": false,
+      "purposes": [
+        "Cover with a prominent image"
+      ],
+      "placeholders": [
+        {
+          "name": "Title",
+          "shape_id": 2,
+          "placeholder_idx": 0,
+          "placeholder_type": "CENTER_TITLE",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 2637592,
+            "width_emu": 7442200,
+            "height_emu": 677108,
+            "x_in": 0.5,
+            "y_in": 2.8845,
+            "width_in": 8.1389,
+            "height_in": 0.7405
+          },
+          "default_text": "Title",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Subtitle",
+          "shape_id": 3,
+          "placeholder_idx": 11,
+          "placeholder_type": "BODY",
+          "geometry": {
+            "x_emu": 8128000,
+            "y_emu": 2790505,
+            "width_emu": 3606800,
+            "height_emu": 430887,
+            "x_in": 8.8889,
+            "y_in": 3.0517,
+            "width_in": 3.9444,
+            "height_in": 0.4712
+          },
+          "default_text": "Subtitle\u000bDate, Presenter, Location (optional), etc.",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        },
+        {
+          "name": "Picture",
+          "shape_id": 7,
+          "placeholder_idx": 14,
+          "placeholder_type": "PICTURE",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 3543300,
+            "width_emu": 11277600,
+            "height_emu": 3314700,
+            "x_in": 0.5,
+            "y_in": 3.875,
+            "width_in": 12.3333,
+            "height_in": 3.625
+          },
+          "default_text": "Click icon to add picture",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        }
+      ],
+      "protected_non_placeholder_shapes": []
+    },
+    {
+      "index": 17,
+      "id": "contents",
+      "template_name": "Contents",
+      "semantic_alias": "Contents",
+      "generic_fallback": "contents",
+      "fallback_if_unavailable": "Blank",
+      "fixed_content": false,
+      "protected_layout": false,
+      "blank_must_be_populated": false,
+      "purposes": [
+        "Mandatory table of contents or agenda"
+      ],
+      "placeholders": [
+        {
+          "name": "Title",
+          "shape_id": 2,
+          "placeholder_idx": 0,
+          "placeholder_type": "TITLE",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 384048,
+            "width_emu": 5413248,
+            "height_emu": 797052,
+            "x_in": 0.5,
+            "y_in": 0.42,
+            "width_in": 5.92,
+            "height_in": 0.8717
+          },
+          "default_text": "Contents",
+          "populate_before_manual_objects": true,
+          "move_or_resize_allowed": false
+        }
+      ],
+      "protected_non_placeholder_shapes": []
+    },
+    {
+      "index": 18,
+      "id": "confidentiality",
+      "template_name": "Confidentiality",
+      "semantic_alias": "Confidentiality",
+      "generic_fallback": "fixed_confidentiality",
+      "fallback_if_unavailable": null,
+      "fixed_content": true,
+      "protected_layout": true,
+      "blank_must_be_populated": false,
+      "purposes": [
+        "Mandatory fixed confidentiality page"
+      ],
+      "placeholders": [],
+      "protected_non_placeholder_shapes": [
+        {
+          "name": "DTP_Confidentiality",
+          "shape_id": 9,
+          "shape_type": "TABLE",
+          "geometry": {
+            "x_emu": 457200,
+            "y_emu": 2529840,
+            "width_emu": 9359900,
+            "height_emu": 1798320,
+            "x_in": 0.5,
+            "y_in": 2.7667,
+            "width_in": 10.2361,
+            "height_in": 1.9667
+          },
+          "protected": true
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "id": "qualification",
+      "template_name": "Qualification",
+      "semantic_alias": "Qualification",
+      "generic_fallback": "fixed_qualification",
+      "fallback_if_unavailable": null,
+      "fixed_content": true,
+      "protected_layout": true,
+      "blank_must_be_populated": false,
+      "purposes": [
+        "Mandatory fixed qualifications page"
+      ],
+      "placeholders": [],
+      "protected_non_placeholder_shapes": [
+        {
+          "name": "TextConfOW-S-",
+          "shape_id": 3,
+          "shape_type": "TABLE",
+          "geometry": {
+            "x_emu": 457198,
+            "y_emu": 1668780,
+            "width_emu": 9359901,
+            "height_emu": 3520440,
+            "x_in": 0.5,
+            "y_in": 1.825,
+            "width_in": 10.2361,
+            "height_in": 3.85
+          },
+          "protected": true
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "id": "backcover",
+      "template_name": "Backcover",
+      "semantic_alias": "Backcover",
+      "generic_fallback": "fixed_backcover",
+      "fallback_if_unavailable": null,
+      "fixed_content": true,
+      "protected_layout": true,
+      "blank_must_be_populated": false,
+      "purposes": [
+        "Mandatory fixed closing page"
+      ],
+      "placeholders": [],
+      "protected_non_placeholder_shapes": []
+    },
+    {
+      "index": 21,
+      "id": "blank",
+      "template_name": "Blank",
+      "semantic_alias": "Blank",
+      "generic_fallback": "custom_canvas",
+      "fallback_if_unavailable": null,
+      "fixed_content": false,
+      "protected_layout": false,
+      "blank_must_be_populated": true,
+      "purposes": [
+        "Starting canvas for a custom composition; never deliver empty"
+      ],
+      "placeholders": [],
+      "protected_non_placeholder_shapes": []
+    }
+  ],
+  "protected_standard_elements": [
+    "organization logo, if present",
+    "client-logo area",
+    "copyright, if present",
+    "slide number",
+    "footer and source area",
+    "footer separator line",
+    "confidentiality wording and table",
+    "qualification wording and table",
+    "backcover artwork",
+    "embedded think-cell data object"
+  ],
+  "integrity_checks": [
+    "Template SHA-256 matches this manifest or the manifest is regenerated",
+    "Expected slide dimensions match",
+    "Expected layout names are present",
+    "No VBA project or macro-enabled content remains in the final PPTX",
+    "Fixed legal and closing layouts remain unchanged unless explicitly overridden for the current task",
+    "Blank slides contain meaningful visible content"
+  ]
+}

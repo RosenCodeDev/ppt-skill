@@ -1,0 +1,161 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.internal/schemas/ow-render-plan.schema.json",
+  "title": "the firm RenderPlan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "plan_id",
+    "deck_id",
+    "task_instance_id",
+    "created_at",
+    "publication_intent",
+    "source_deck_spec_sha256",
+    "provider",
+    "template",
+    "requirement_bindings",
+    "slides"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "plan_id": {"type": "string", "minLength": 1},
+    "deck_id": {"type": "string", "minLength": 1},
+    "task_instance_id": {"type": "string", "minLength": 1},
+    "created_at": {"type": "string", "format": "date-time"},
+    "publication_intent": {"enum": ["publish", "evaluate"]},
+    "source_deck_spec_sha256": {"$ref": "#/$defs/sha256"},
+    "provider": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "interface_version", "classification", "version"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "interface_version": {"const": "1.0.0"},
+        "classification": {"enum": ["publishable_native", "evaluation_only"]},
+        "version": {"type": "string", "minLength": 1}
+      }
+    },
+    "template": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "manifest_path", "manifest_sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "manifest_path": {"type": "string", "minLength": 1},
+        "manifest_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "requirement_bindings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/requirementBinding"}
+    },
+    "slides": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/slide"}
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[a-fA-F0-9]{64}$"},
+    "requirementBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["requirement_id", "slide_id", "element_ids", "planned_representation", "verification_tokens", "required"],
+      "properties": {
+        "requirement_id": {"type": "string", "minLength": 1},
+        "slide_id": {"type": "string", "minLength": 1},
+        "element_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "planned_representation": {"type": "string", "minLength": 1},
+        "verification_tokens": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "required": {"const": true}
+      }
+    },
+    "binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["element_id", "semantic_role", "required", "accepted_content_kinds"],
+      "properties": {
+        "element_id": {"type": "string", "minLength": 1},
+        "placeholder_idx": {"type": ["integer", "null"], "minimum": 0},
+        "semantic_role": {"type": "string", "minLength": 1},
+        "group_id": {"type": ["string", "null"]},
+        "required": {"type": "boolean"},
+        "accepted_content_kinds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "block": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["element_id", "strategy", "content_key", "required", "payload"],
+      "properties": {
+        "element_id": {"type": "string", "minLength": 1},
+        "strategy": {"type": "string", "minLength": 1},
+        "content_key": {"type": "string", "minLength": 1},
+        "required": {"type": "boolean"},
+        "payload": {}
+      }
+    },
+    "slide": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "slide_id",
+        "source_position",
+        "semantic_intent",
+        "exhibit_strategy",
+        "layout",
+        "bindings",
+        "blocks",
+        "required_element_ids",
+        "overflow_policy",
+        "provider_payload"
+      ],
+      "properties": {
+        "slide_id": {"type": "string", "minLength": 1},
+        "source_position": {"type": "integer", "minimum": 1},
+        "semantic_intent": {"type": "string", "minLength": 1},
+        "exhibit_strategy": {"type": "string", "minLength": 1},
+        "layout": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["template_name", "semantic_alias", "provider_eligible"],
+          "properties": {
+            "template_name": {"type": "string", "minLength": 1},
+            "semantic_alias": {"type": "string", "minLength": 1},
+            "provider_eligible": {"type": "boolean"},
+            "grouped_slot_ids": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {"type": "string", "minLength": 1}
+            }
+          }
+        },
+        "bindings": {"type": "array", "items": {"$ref": "#/$defs/binding"}},
+        "blocks": {"type": "array", "items": {"$ref": "#/$defs/block"}},
+        "required_element_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "overflow_policy": {"enum": ["reject", "split_with_lineage"]},
+        "provider_payload": {"type": "object"}
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {"provider": {"properties": {"classification": {"const": "evaluation_only"}}}}
+      },
+      "then": {"properties": {"publication_intent": {"const": "evaluate"}}}
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0.0",
+  "build_id": "build-example-001",
+  "plan_id": "plan-example-001",
+  "deck_id": "example-render-contract",
+  "task_instance_id": "task-example-render-001",
+  "publication_intent": "evaluate",
+  "started_at": "2026-09-22T00:00:00Z",
+  "completed_at": "2026-09-22T00:01:00Z",
+  "provider": {
+    "id": "example-evaluation-provider",
+    "interface_version": "1.0.0",
+    "classification": "evaluation_only",
+    "version": "1.0.0",
+    "engine": "example",
+    "engine_version": "1.0.0"
+  },
+  "inputs": {
+    "deck_spec": {"path": "deck-spec.json", "sha256": "0000000000000000000000000000000000000000000000000000000000000000"},
+    "render_plan": {"path": "render-plan.json", "sha256": "0000000000000000000000000000000000000000000000000000000000000000"},
+    "template": {"path": "Corporate_Template.pptx", "sha256": "0000000000000000000000000000000000000000000000000000000000000000"},
+    "template_manifest": {"path": "template_manifest.json", "sha256": "0000000000000000000000000000000000000000000000000000000000000000"}
+  },
+  "candidate": {
+    "path": "candidate.pptx",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "slide_count": 1
+  },
+  "slide_lineage": [
+    {"source_slide_id": "S01", "physical_slide_numbers": [1], "actual_layouts": ["Title and Content"]}
+  ],
+  "element_dispositions": [
+    {"slide_id": "S01", "element_id": "S01-E01", "required": true, "status": "emitted", "physical_slide_numbers": [1], "shape_ids": [7]}
+  ],
+  "requirement_dispositions": [
+    {
+      "requirement_id": "CR-001",
+      "required": true,
+      "status": "verified_emitted",
+      "slide_ids": ["S01"],
+      "element_ids": ["S01-E01"],
+      "verification_evidence": ["Customer satisfaction and 4.4 are visible on slide 1"]
+    }
+  ],
+  "findings": [],
+  "qa": {
+    "contract_validation": {"status": "passed", "evidence": ["Schemas and hashes passed"]},
+    "decision_critical_coverage": {"status": "passed", "evidence": ["CR-001 visibly emitted"]},
+    "provider_result": {"status": "passed", "evidence": ["Provider completed"]},
+    "package_integrity": {"status": "passed", "evidence": ["Package opened"]},
+    "layout_geometry": {"status": "warning", "evidence": ["Rendered review pending"]},
+    "template_fidelity": {"status": "warning", "evidence": ["Evaluation-only provider"]},
+    "render_completeness": {"status": "skipped", "evidence": ["Pending"]},
+    "visual_review": {"status": "skipped", "evidence": ["Pending"]},
+    "report_parity": {"status": "skipped", "evidence": ["Pending"]}
+  },
+  "artifacts": {
+    "provider_result": {"path": "provider-result.json", "sha256": "0000000000000000000000000000000000000000000000000000000000000000"},
+    "structural_report": {"path": "structural-report.json", "sha256": "0000000000000000000000000000000000000000000000000000000000000000"}
+  },
+  "status": "awaiting_visual_review",
+  "delivery": {
+    "status": "ineligible",
+    "reasons": ["Evaluation-only example"]
+  }
+}

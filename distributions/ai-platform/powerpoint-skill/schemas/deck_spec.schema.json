@@ -1,0 +1,489 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.internal/schemas/ow-deck-spec.schema.json",
+  "title": "PowerPoint DeckSpec",
+  "description": "Task-scoped, platform-neutral specification governing PPTX generation and the companion options report.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "skill_version",
+    "deck_id",
+    "task_instance_id",
+    "task_scope",
+    "mode",
+    "capability_tier",
+    "brief",
+    "governing_thought",
+    "slides",
+    "qa_summary",
+    "outputs"
+  ],
+  "properties": {
+    "schema_version": {"const": "2.0.0"},
+    "skill_version": {"type": "string"},
+    "deck_id": {"type": "string", "minLength": 1},
+    "task_instance_id": {"type": "string", "minLength": 1},
+    "created_at": {"type": "string", "format": "date-time"},
+    "task_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["task_scoped", "canonical_assets_mutated", "carry_over_to_future_tasks"],
+      "properties": {
+        "task_scoped": {"const": true},
+        "canonical_assets_mutated": {"const": false},
+        "carry_over_to_future_tasks": {"const": false}
+      }
+    },
+    "mode": {
+      "enum": ["create", "targeted_modify", "review_and_improve"]
+    },
+    "capability_tier": {
+      "enum": ["tier_1_text_only", "tier_2_native_generation", "tier_3_programmatic", "tier_4_desktop_automation"]
+    },
+    "template": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["file", "manifest_file", "template_sha256", "manifest_match"],
+      "properties": {
+        "file": {"type": "string"},
+        "manifest_file": {"type": "string"},
+        "template_sha256": {"type": "string"},
+        "manifest_match": {"enum": ["verified", "regenerated", "not_verifiable", "mismatch_disclosed"]},
+        "provisional_fallback_used": {"type": "boolean"}
+      }
+    },
+    "brief": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["objective", "audience", "purpose"],
+      "properties": {
+        "objective": {"type": "string", "minLength": 1},
+        "audience": {"type": "string", "minLength": 1},
+        "purpose": {"type": "string", "minLength": 1},
+        "decision_or_action": {"type": "string"},
+        "presentation_mode": {"enum": ["live", "standalone", "mixed", "unspecified"]},
+        "scope": {"type": "string"},
+        "constraints": {"type": "array", "items": {"type": "string"}},
+        "source_materials": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "decision_critical_requirements": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/decisionCriticalRequirement"}
+    },
+    "user_blueprint": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "present": {"type": "boolean"},
+        "summary": {"type": "string"},
+        "instructions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["scope", "instruction", "status"],
+            "properties": {
+              "scope": {"type": "string"},
+              "instruction": {"type": "string"},
+              "status": {"enum": ["locked", "preferred", "open", "unspecified"]}
+            }
+          }
+        }
+      }
+    },
+    "user_overrides": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/userOverride"}
+    },
+    "evidence_ledger": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/evidenceRecord"}
+    },
+    "governing_thought": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["statement", "supporting_arguments"],
+      "properties": {
+        "statement": {"type": "string", "minLength": 1},
+        "supporting_arguments": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "counter_evidence": {"type": "array", "items": {"type": "string"}},
+        "alternative_explanations": {"type": "array", "items": {"type": "string"}},
+        "vulnerable_assumptions": {"type": "array", "items": {"type": "string"}},
+        "decision_risks": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "terminology_register": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["term", "approved_usage"],
+        "properties": {
+          "term": {"type": "string"},
+          "approved_usage": {"type": "string"},
+          "avoid": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "slides": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/slide"}
+    },
+    "qa_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["deterministic_structural", "render_dependent_visual", "judgment_based_communication", "final_validation"],
+      "properties": {
+        "deterministic_structural": {"$ref": "#/$defs/qaCategory"},
+        "render_dependent_visual": {"$ref": "#/$defs/qaCategory"},
+        "judgment_based_communication": {"$ref": "#/$defs/qaCategory"},
+        "final_validation": {"enum": ["passed", "passed_with_disclosures", "failed", "not_completed"]}
+      }
+    },
+    "outputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pptx", "companion_report"],
+      "properties": {
+        "pptx": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["required", "status", "macro_free"],
+          "properties": {
+            "required": {"const": true},
+            "status": {"enum": ["created", "not_created", "created_with_disclosures"]},
+            "path": {"type": "string"},
+            "macro_free": {"type": "boolean"},
+            "openable_validation": {"enum": ["verified", "not_verifiable", "failed"]}
+          }
+        },
+        "companion_report": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["required", "generated_from_deck_spec", "markdown_file", "chat_output", "parity_status"],
+          "properties": {
+            "required": {"const": true},
+            "generated_from_deck_spec": {"const": true},
+            "markdown_file": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["required", "status", "complete", "single_file"],
+              "properties": {
+                "required": {"const": true},
+                "status": {"enum": ["created", "not_created", "created_with_disclosures"]},
+                "path": {"type": "string", "pattern": "-companion-options-report\\.md$"},
+                "complete": {"type": "boolean"},
+                "single_file": {"const": true}
+              }
+            },
+            "chat_output": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["required", "status", "complete", "rendered_in_final_response", "content_matches_markdown"],
+              "properties": {
+                "required": {"const": true},
+                "status": {"enum": ["created", "not_created", "created_with_disclosures"]},
+                "complete": {"type": "boolean"},
+                "rendered_in_final_response": {"type": "boolean"},
+                "content_matches_markdown": {"type": "boolean"}
+              }
+            },
+            "parity_status": {"enum": ["verified", "partially_verified", "not_technically_verifiable", "failed"]}
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "decisionCriticalRequirement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["requirement_id", "category", "statement", "required_in_deck", "source_refs", "target_slide_ids", "target_element_ids"],
+      "properties": {
+        "requirement_id": {"type": "string", "minLength": 1},
+        "category": {"enum": ["objective", "guardrail", "decision", "constraint", "required_evidence"]},
+        "statement": {"type": "string", "minLength": 1},
+        "required_in_deck": {"type": "boolean"},
+        "source_refs": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "target_slide_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "target_element_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "verification_note": {"type": "string"}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"required_in_deck": {"const": true}}},
+          "then": {
+            "properties": {
+              "target_slide_ids": {"minItems": 1},
+              "target_element_ids": {"minItems": 1}
+            }
+          }
+        }
+      ]
+    },
+    "evidenceStatus": {
+      "enum": [
+        "verified_source_fact",
+        "user_provided_fact",
+        "derived_calculation",
+        "assumption",
+        "preliminary_hypothesis",
+        "working_estimate",
+        "illustrative_content",
+        "unverified_claim",
+        "placeholder",
+        "not_applicable"
+      ]
+    },
+    "contentValue": {
+      "oneOf": [
+        {"type": "string"},
+        {"type": "array", "items": {"type": "string"}},
+        {"type": "object"}
+      ]
+    },
+    "alternative": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["option_id", "value"],
+      "properties": {
+        "option_id": {"type": "string"},
+        "value": {"$ref": "#/$defs/contentValue"},
+        "rationale": {"type": "string"},
+        "evidence_status": {"$ref": "#/$defs/evidenceStatus"},
+        "source_refs": {"type": "array", "items": {"type": "string"}},
+        "question_style": {"type": "boolean"}
+      }
+    },
+    "selectedWithAlternatives": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["selected", "alternatives", "alternative_status"],
+      "properties": {
+        "selected": {"$ref": "#/$defs/alternative"},
+        "alternatives": {"type": "array", "maxItems": 4, "items": {"$ref": "#/$defs/alternative"}},
+        "alternative_status": {
+          "enum": ["alternatives_available", "no_meaningful_alternative", "no_evidence_supported_alternative", "not_applicable"]
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_id", "display_text"],
+      "properties": {
+        "source_id": {"type": "string"},
+        "display_text": {"type": "string"},
+        "location": {"type": "string"},
+        "date": {"type": "string"},
+        "verification_status": {"enum": ["verified", "user_provided", "unverified"]}
+      }
+    },
+    "evidenceRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evidence_id", "claim", "status"],
+      "properties": {
+        "evidence_id": {"type": "string"},
+        "claim": {"type": "string"},
+        "status": {"$ref": "#/$defs/evidenceStatus"},
+        "source_refs": {"type": "array", "items": {"type": "string"}},
+        "validation_needed": {"type": "string"},
+        "notes": {"type": "string"}
+      }
+    },
+    "provisionalLabel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label_text", "style_id", "applies_to", "visible_in_pptx"],
+      "properties": {
+        "label_text": {
+          "enum": ["ASSUMPTION", "PRELIMINARY HYPOTHESIS", "WORKING ESTIMATE", "ILLUSTRATIVE", "EXAMPLE", "DRAFT", "SOURCE TO BE VERIFIED"]
+        },
+        "style_id": {"const": "OW_PROVISIONAL_LABEL"},
+        "applies_to": {"type": "string"},
+        "visible_in_pptx": {"const": true},
+        "scope_unambiguous": {"type": "boolean"}
+      }
+    },
+    "userOverride": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "override_id",
+        "scope",
+        "user_direction",
+        "conflict_rule",
+        "consequence",
+        "status",
+        "implementation",
+        "task_scoped",
+        "canonical_assets_mutated"
+      ],
+      "properties": {
+        "override_id": {"type": "string"},
+        "scope": {"type": "string"},
+        "user_direction": {"type": "string"},
+        "conflict_rule": {"type": "string"},
+        "consequence": {"type": "string"},
+        "alternatives_offered": {"type": "array", "items": {"type": "string"}},
+        "status": {"const": "confirmed"},
+        "implementation": {"type": "string"},
+        "task_scoped": {"const": true},
+        "canonical_assets_mutated": {"const": false}
+      }
+    },
+    "layoutAlternative": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["option_id", "template_name", "semantic_alias", "custom", "rationale"],
+      "properties": {
+        "option_id": {"type": "string", "minLength": 1},
+        "template_name": {"type": "string"},
+        "semantic_alias": {"type": "string"},
+        "custom": {"type": "boolean"},
+        "rationale": {"type": "string", "minLength": 1}
+      }
+    },
+    "layout": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["option_id", "template_name", "semantic_alias", "custom", "rationale", "alternatives", "alternative_status"],
+      "properties": {
+        "option_id": {"type": "string", "minLength": 1},
+        "template_name": {"type": "string"},
+        "semantic_alias": {"type": "string"},
+        "custom": {"type": "boolean"},
+        "rationale": {"type": "string", "minLength": 1},
+        "alternatives": {
+          "type": "array",
+          "maxItems": 4,
+          "items": {"$ref": "#/$defs/layoutAlternative"}
+        },
+        "alternative_status": {
+          "enum": ["alternatives_available", "no_meaningful_alternative", "not_applicable"]
+        },
+        "fallback_used": {"type": "string"},
+        "new_layout_created": {"type": "boolean"},
+        "new_master_created": {"type": "boolean"},
+        "creation_reason": {"type": "string"}
+      }
+    },
+    "title": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["format", "t1"],
+      "properties": {
+        "format": {"enum": ["T1_ONLY", "T1_T2", "FIXED_TEMPLATE", "NONE"]},
+        "t1": {"$ref": "#/$defs/selectedWithAlternatives"},
+        "t2": {"$ref": "#/$defs/selectedWithAlternatives"},
+        "fit_status": {"enum": ["fits", "revised_to_fit", "accepted_user_override", "not_applicable", "not_verified"]}
+      }
+    },
+    "element": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["element_id", "element_type", "content", "evidence_status"],
+      "properties": {
+        "element_id": {"type": "string"},
+        "element_type": {
+          "enum": [
+            "body_text", "bullets", "heading", "chart", "table", "diagram", "process", "map", "image", "screenshot", "pdf_visual", "smartart", "svg", "icon", "callout", "large_number", "footnote", "source", "speaker_notes", "custom"
+          ]
+        },
+        "content": {"$ref": "#/$defs/selectedWithAlternatives"},
+        "evidence_status": {"$ref": "#/$defs/evidenceStatus"},
+        "source_refs": {"type": "array", "items": {"type": "string"}},
+        "editable": {"type": "boolean"},
+        "native_powerpoint_object": {"type": "boolean"},
+        "provisional_label": {"$ref": "#/$defs/provisionalLabel"},
+        "accessibility": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "alt_text": {"type": "string"},
+            "decorative": {"type": "boolean"},
+            "color_only_encoding_avoided": {"type": "boolean"}
+          }
+        }
+      }
+    },
+    "qaCheck": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["check_id", "status"],
+      "properties": {
+        "check_id": {"type": "string"},
+        "status": {"enum": ["passed", "failed", "accepted_user_override", "skipped_capability_unavailable", "not_applicable"]},
+        "details": {"type": "string"},
+        "override_reference": {"type": "string"}
+      }
+    },
+    "qaCategory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "checks"],
+      "properties": {
+        "status": {"enum": ["completed", "partially_completed", "skipped_capability_unavailable", "failed"]},
+        "checks": {"type": "array", "items": {"$ref": "#/$defs/qaCheck"}}
+      }
+    },
+    "slide": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["slide_id", "position", "structural_role", "substantive", "substantive_reason", "modified_in_task", "companion_coverage", "layout", "purpose", "elements", "qa"],
+      "properties": {
+        "slide_id": {"type": "string"},
+        "position": {"type": "integer", "minimum": 1},
+        "section_id": {"type": "string"},
+        "structural_role": {
+          "enum": ["title", "confidentiality", "contents", "section", "content", "executive_summary", "recommendation", "next_steps", "appendix", "qualification", "backcover"]
+        },
+        "substantive": {"type": "boolean"},
+        "substantive_reason": {"type": "string", "minLength": 1},
+        "modified_in_task": {"type": "boolean"},
+        "companion_coverage": {"enum": ["full", "technical_notice_only"]},
+        "purpose": {"type": "string"},
+        "layout": {"$ref": "#/$defs/layout"},
+        "title": {"$ref": "#/$defs/title"},
+        "elements": {"type": "array", "items": {"$ref": "#/$defs/element"}},
+        "sources": {"type": "array", "items": {"$ref": "#/$defs/source"}},
+        "instruction_source": {"enum": ["user", "agent", "template", "mixed"]},
+        "instruction_status": {"enum": ["locked", "preferred", "open", "unspecified"]},
+        "confirmed_override_refs": {"type": "array", "items": {"type": "string"}},
+        "intentionally_unchanged": {"type": "boolean"},
+        "qa": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/qaCheck"}
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "anyOf": [
+              {"properties": {"substantive": {"const": true}}, "required": ["substantive"]},
+              {"properties": {"modified_in_task": {"const": true}}, "required": ["modified_in_task"]}
+            ]
+          },
+          "then": {"properties": {"companion_coverage": {"const": "full"}}}
+        },
+        {
+          "if": {
+            "properties": {"companion_coverage": {"const": "technical_notice_only"}},
+            "required": ["companion_coverage"]
+          },
+          "then": {
+            "properties": {
+              "substantive": {"const": false},
+              "modified_in_task": {"const": false}
+            }
+          }
+        }
+      ]
+    }
+  }
+}

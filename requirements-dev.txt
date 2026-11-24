@@ -1,0 +1,2 @@
+# Python 3.10 or newer is required. The test suite uses the standard-library unittest runner.
+jsonschema>=4.20,<5
